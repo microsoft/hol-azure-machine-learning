@@ -1,4 +1,4 @@
-# 5. Custom Scripts(R&Python) in AML
+# 5. Custom Scripts (R & Python) in AML
 ## 5.1. Overview
 In this lab we will convert the R & Python codes that we executed on our local machines in the first lab session of this hands-on lab series. Idea is to show the capability of running native R & Python code in Azure ML experiment. Explore the customization features of Azure ML experiments. This knowledge can be used to integrate local or third party R & Python scripts, libraries, workspaces etc. into Azure ML experiment.  
 

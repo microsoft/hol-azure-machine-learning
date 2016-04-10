@@ -118,7 +118,7 @@ Batch processing will proceed in three steps:
 1. Create or use exsiting Azure Storage Account. Under this account create or use existing container. (Same operations already discribed in the earlier lab sessions by using Azure Storage Explorer application.) Do not copy the local input file into this container, it will be done automatically by the sample application programmatically. This storage area will be used to store input, output data and trained model module etc.  
 ![](./imgs/7.2.i013.png)  
 
-1. In Azure ML Studio, goto the Web Services page. Click on the "....[Predictive Exp.]" web service that we created from the "predictive experiment".
+1. In Azure ML Studio, goto the Web Services page. Click on the "....[Predictive Exp.]" web service that we created from the "predictive experiment".  
 ![](./imgs/7.2.i014.png)  
 
 1. Click on the **Batch Execution** link on the **Dashboard** page that is opened by the previous step.
@@ -126,7 +126,7 @@ Batch processing will proceed in three steps:
 
 1. Previous step will open a new page named **Batch Execution API Documentation for...** scroll to the bottom of this page where you will see the sample codes.
 
-1. Under **c#** tab, select the code and copy it. We will use this code in a **Console Application** that we will create in Visual Studio.
+1. Under **c#** tab, select the code and copy it. We will use this code in a **Console Application** that we will create in Visual Studio.  
 ![](./imgs/7.2.i016.png)  
 
 1. Open Visual Studio, create an empty C# console application from the existing templates.
@@ -213,7 +213,7 @@ Followind the above steps, lets retrain the existing model with the above new ob
 
 1. "Run" the experiment.  
 
-1. Now "Set up web service" button is active. Click on the "Set up web service" button and click on the "Deploy Web Service" item on the popup menu.
+1. Now "Set up web service" button is active. Click on the "Set up web service" button and click on the "Deploy Web Service" item on the popup menu.  
 ![](./imgs/7.2.i026.png)  
 
 1. If you goto the "Webservices" page in the ML Studio, you will see the newly created web service. **Note** the API key of this webservice's default endpoint and the URI of the BES method. We will use these, call it **first triplet**, in the upcoming stages.  
@@ -222,7 +222,7 @@ Followind the above steps, lets retrain the existing model with the above new ob
 1. To access the Batch URI, click on the "Batch execution" link that is shown in the previous step. You will see the URI under "Submit (but not start) a Batch Execution job" section. It is the URI that we will use in the **first triplet**  
 ![](./imgs/7.2.i040.png)  
 
-1. Also scroll down to the end of the this page where you will see the sample code. Copy the C# code as a part of the **first triplet** parameters.
+1. Also scroll down to the end of the this page where you will see the sample code. Copy the C# code as a part of the **first triplet** parameters.  
 ![](./imgs/7.2.i041.png)  
 
 1. We complete the steps to collect parameters required to generate updated models. Later we will use the above **first triplet** (ApiKey, URI and C# code) in the sample retraining application together with other parameters after completing the next stages.

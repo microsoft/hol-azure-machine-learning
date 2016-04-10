@@ -68,7 +68,7 @@ Later on we will make some changes on this new design, but let’s publish it as
 
 6. Before publishing as a web service, the experiment must be run so possible edits can be validated. So we “RUN” it in the “Predictive experiment” tab.  
 
-7. Finally click on the “Deploy Web Service” button on the command bar.
+7. Finally click on the “Deploy Web Service” button on the command bar.  
 ![](./imgs/4.2.i012.png)  
 
 8. After few seconds, you will be forwarded to web services page that shows the newly created web service for your experiment.  
@@ -104,7 +104,7 @@ Later on we will make some changes on this new design, but let’s publish it as
 6. Click on the first “Project Columns” module and then click the “Launch column selector” button on the properties window.  
 ![](./imgs/4.2.i022.png)  
 
-7. Select just “x” columns in the pop-up window.
+7. Select just “x” columns in the pop-up window.  
 ![](./imgs/4.2.i023.png)  
 
 8. Now do the same for the second “Project Columns” module. Select just “Scored Labels” column as output.  
@@ -122,7 +122,7 @@ Later on we will make some changes on this new design, but let’s publish it as
 12. Once again the “Web service” is published and automatically switched to the “Dashboard” page where the “Test” button exist. Click on the “Test” button. Yes, you will see just the “x” parameter as input. Enter any numeric input value and press the checkmark button on the bottom right corner.  
 ![](./imgs/4.2.i028.png)  
 
-13. After few seconds, output of the web service will become available in the notification bar at the bottom of the page. Click on the “Details” link.
+13. After few seconds, output of the web service will become available in the notification bar at the bottom of the page. Click on the “Details” link.  
 ![](./imgs/4.2.i029.png)  
 
 14. You will see only the “Scored Label” as an output in the JSon output. Now we have a web service working as we desired.  

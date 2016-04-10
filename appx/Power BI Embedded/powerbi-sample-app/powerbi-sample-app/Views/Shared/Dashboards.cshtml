@@ -1,0 +1,31 @@
+﻿@model DashboardsViewModel
+@{
+    Layout = null;
+
+    var classNames = "panel panel-default dropdown";
+
+    if (this.Request.RawUrl.IndexOf("dashboardId") > -1)
+    {
+        classNames += " active";
+    }
+}
+
+<li class="@classNames">
+    <a data-toggle="collapse" href="#dashboards-nav">
+        <span class="icon fa fa-tachometer"></span><span class="title">Dashboards</span>
+    </a>
+    <!-- Dropdown level 1 -->
+    <div id="dashboards-nav" class="panel-collapse collapse">
+        <div class="panel-body">
+            <ul class="nav navbar-nav">
+                @foreach (var dashboard in Model.Dashboards)
+                {
+                    var reportClass = Request.QueryString["dashboardId"] == dashboard.Id ? "active" : "";
+                    <li class="@reportClass">
+                        @Html.ActionLink(dashboard.DisplayName, "Index", new { dashboardId = dashboard.Id })
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</li>

@@ -1,0 +1,72 @@
+﻿@model powerbi_sample_app.Models.WorkOrderViewModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="side-body padding-top">
+    <h2>View</h2>
+
+    <div>
+        <h4>WorkOrderViewModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.WorkOrderName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WorkOrderName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AircraftName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AircraftName)
+            </dd>
+
+        </dl>
+        @foreach(var discrepancy in Model.Discrepancies)
+        {
+            <dl class="discrepancy dl-horizontal">
+                <dt>
+                    Name
+                </dt>
+
+                <dd>
+                    @discrepancy.Name
+                </dd>
+
+                <dt>
+                    Reporter
+                </dt>
+
+                <dd>
+                    @discrepancy.Reporter
+                </dd>
+
+                <dt>
+                    Description of Work
+                </dt>
+
+                <dd>
+                    @discrepancy.Description
+                </dd>
+
+                <dt>
+                    Estimate (Hours)
+                </dt>
+
+                <dd>
+                    @discrepancy.Hours
+                </dd>
+            </dl>
+        }
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

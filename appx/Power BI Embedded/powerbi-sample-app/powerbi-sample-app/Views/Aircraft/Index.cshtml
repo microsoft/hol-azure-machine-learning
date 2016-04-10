@@ -1,0 +1,219 @@
+﻿@section Breadcrumbs{
+    <ol class="breadcrumb navbar-breadcrumb">
+            <li>Aircraft Search</li>
+    </ol>
+}
+
+@section Scripts {
+    <script src="/lib/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#aircrafts .input-group.date').datepicker({
+            });
+        });
+    </script>
+}
+
+<div id="aircrafts" class="side-body padding-top">
+    <div style="min-width:900px;">
+        <div class="page-header">
+            <h1>Aircraft Search</h1>
+        </div>
+        <div class="search-box-wrapper">
+            <div class="search-box" style="padding-top:15px;">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Aircraft Operators</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Aircraft Tail Number</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Aircraft Year Manufactured</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Last Maintenance</label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Aircraft Manufacture</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Aircraft Model Name</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Aircraft Type</label>
+                        <select>
+                            <option value="1" selected>All</option>
+                            <option value="2">B787-800</option>
+                            <option value="3">B787-900</option>
+                            <option value="4">A380-841</option>
+                            <option value="5">B777-312ER</option>
+                            <option value="5">B777-212ER</option>
+                            <option value="5">A330-343</option>
+                            <option value="5">B777-312</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3" style="margin-bottom:0;">
+                        <span class="btn btn-info btn-block" style="margin-top:24px;">Filter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-box">
+            <div class="well well-lg">
+                <h3>1AOFA - Operated by: Puget Airlines</h3>
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <p><strong>Make:&nbsp;</strong>&nbsp;Boeing</p>
+                        <p><strong>Model:&nbsp;</strong>&nbsp;787-800</p>
+                        <p><strong>Configuration:&nbsp;</strong>&nbsp;C25Y322</p>
+                    </div>
+                    <div class="col col-sm-4">
+                        <p><strong>Engine Make:&nbsp;</strong>&nbsp;General Electric</p>
+                        <p><strong>Engine Model:&nbsp;</strong>&nbsp;GEnx-1B</p>
+                        <p><strong>Fan Diameter:&nbsp;</strong>&nbsp;112in</p>
+                    </div>
+                    <div class="col col-sm-3">
+                        <p><strong>Tachometer:&nbsp;</strong>&nbsp;1024</p>
+                        <p><strong>Work Orders:&nbsp;</strong>&nbsp;2</p>
+                        <p><strong>Last Maintenance:&nbsp;</strong>&nbsp;2016-03-22</p>
+                    </div>
+                    <div class="col col-sm-2">
+                        <a href="/Workorder/Create?Tailnumber=1AOFA" class="btn btn-primary btn-file pull-right btn-block btn-workorder">New Work Order</a>
+                        <span class="btn btn-primary btn-file pull-right btn-block">Contact Owner</span>
+                    </div>
+                </div>
+            </div>
+            <div class="well well-lg">
+                <h3>1ABKD - Operated by: Pacific Air</h3>
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <p><strong>Make:&nbsp;</strong>&nbsp;Airbus</p>
+                        <p><strong>Model:&nbsp;</strong>&nbsp;A380-841</p>
+                        <p><strong>Configuration:&nbsp;</strong>&nbsp;F14C64W36Y341</p>
+                    </div>
+                    <div class="col col-sm-4">
+                        <p><strong>Engine Make:&nbsp;</strong>&nbsp;Rolls-Royce</p>
+                        <p><strong>Engine Model:&nbsp;</strong>&nbsp;Trent 970B- 84</p>
+                        <p><strong>Fan Diameter:&nbsp;</strong>&nbsp;2950mm</p>
+                    </div>
+                    <div class="col col-sm-3">
+                        <p><strong>Tachometer:&nbsp;</strong>&nbsp;2048</p>
+                        <p><strong>Work Orders:&nbsp;</strong>&nbsp;3</p>
+                        <p><strong>Last Maintenance:&nbsp;</strong>&nbsp;2016-03-29</p>
+                    </div>
+                    <div class="col col-sm-2">
+                        <span class="btn btn-primary btn-file pull-right btn-block btn-workorder">New Work Order</span>
+                        <span class="btn btn-primary btn-file pull-right btn-block">Contact Owner</span>
+                    </div>
+                </div>
+            </div>
+            <div class="well well-lg">
+                <h3>1ABNA - Operated by: Bay Airways</h3>
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <p><strong>Make:&nbsp;</strong>&nbsp;Boeing</p>
+                        <p><strong>Model:&nbsp;</strong>&nbsp;B777-312ER</p>
+                        <p><strong>Configuration:&nbsp;</strong>&nbsp;F8C42Y228</p>
+                    </div>
+                    <div class="col col-sm-4">
+                        <p><strong>Engine Make:&nbsp;</strong>&nbsp;General Electric</p>
+                        <p><strong>Engine Model:&nbsp;</strong>&nbsp;GE90-115B</p>
+                        <p><strong>Fan Diameter:&nbsp;</strong>&nbsp;134in</p>
+                    </div>
+                    <div class="col col-sm-3">
+                        <p><strong>Tachometer:&nbsp;</strong>&nbsp;8007</p>
+                        <p><strong>Work Orders:&nbsp;</strong>&nbsp;7</p>
+                        <p><strong>Last Maintenance:&nbsp;</strong>&nbsp;2016-01-05</p>
+                    </div>
+                    <div class="col col-sm-2">
+                        <span class="btn btn-primary btn-file pull-right btn-block btn-workorder">New Work Order</span>
+                        <span class="btn btn-primary btn-file pull-right btn-block">Contact Owner</span>
+                    </div>
+                </div>
+            </div>
+            <div class="well well-lg">
+                <h3>1ABTA - Operated by: California Air</h3>
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <p><strong>Make:&nbsp;</strong>&nbsp;Airbus</p>
+                        <p><strong>Model:&nbsp;</strong>&nbsp;A330-343</p>
+                        <p><strong>Configuration:&nbsp;</strong>&nbsp;C34Y263</p>
+                    </div>
+                    <div class="col col-sm-4">
+                        <p><strong>Engine Make:&nbsp;</strong>&nbsp;Pratt & Whitney</p>
+                        <p><strong>Engine Model:&nbsp;</strong>&nbsp;PW4168A</p>
+                        <p><strong>Fan Diameter:&nbsp;</strong>&nbsp;112in</p>
+                    </div>
+                    <div class="col col-sm-3">
+                        <p><strong>Tachometer:&nbsp;</strong>&nbsp;3012</p>
+                        <p><strong>Work Orders:&nbsp;</strong>&nbsp;0</p>
+                        <p><strong>Last Maintenance:&nbsp;</strong>&nbsp;2016-02-12</p>
+                    </div>
+                    <div class="col col-sm-2">
+                        <span class="btn btn-primary btn-file pull-right btn-block btn-workorder">New Work Order</span>
+                        <span class="btn btn-primary btn-file pull-right btn-block">Contact Owner</span>
+                    </div>
+                </div>
+            </div>
+            <div class="well well-lg">
+                <h3>1ABAM - Operated by: Mariano Airways</h3>
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <p><strong>Make:&nbsp;</strong>&nbsp;Boeing</p>
+                        <p><strong>Model:&nbsp;</strong>&nbsp;B777-212ER</p>
+                        <p><strong>Configuration:&nbsp;</strong>&nbsp;F10C46Y253</p>
+                    </div>
+                    <div class="col col-sm-4">
+                        <p><strong>Engine Make:&nbsp;</strong>&nbsp;Rolls-Royce</p>
+                        <p><strong>Engine Model:&nbsp;</strong>&nbsp;RB211-TRENT 892</p>
+                        <p><strong>Fan Diameter:&nbsp;</strong>&nbsp;110in</p>
+                    </div>
+                    <div class="col col-sm-3">
+                        <p><strong>Tachometer:&nbsp;</strong>&nbsp;8176</p>
+                        <p><strong>Work Orders:&nbsp;</strong>&nbsp;1</p>
+                        <p><strong>Last Maintenance:&nbsp;</strong>&nbsp;2016-01-18</p>
+                    </div>
+                    <div class="col col-sm-2">
+                        <span class="btn btn-primary btn-file pull-right btn-block btn-workorder">New Work Order</span>
+                        <span class="btn btn-primary btn-file pull-right btn-block">Contact Owner</span>
+                    </div>
+                </div>
+            </div>
+            <div class="well well-lg">
+                <h3>1ABCI - Operated by: Juan Air</h3>
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <p><strong>Make:&nbsp;</strong>&nbsp;Boeing</p>
+                        <p><strong>Model:&nbsp;</strong>&nbsp;B747-412F</p>
+                        <p><strong>Configuration:&nbsp;</strong>&nbsp;F10C54Y234</p>
+                    </div>
+                    <div class="col col-sm-4">
+                        <p><strong>Engine Make:&nbsp;</strong>&nbsp;Pratt &Aacute; Whitney</p>
+                        <p><strong>Engine Model:&nbsp;</strong>&nbsp;PW4056</p>
+                        <p><strong>Fan Diameter:&nbsp;</strong>&nbsp;94in</p>
+                    </div>
+                    <div class="col col-sm-3">
+                        <p><strong>Tachometer:&nbsp;</strong>&nbsp;12008</p>
+                        <p><strong>Work Orders:&nbsp;</strong>&nbsp;4</p>
+                        <p><strong>Last Maintenance:&nbsp;</strong>&nbsp;2015-12-26</p>
+                    </div>
+                    <div class="col col-sm-2">
+                        <span class="btn btn-primary btn-file pull-right btn-block btn-workorder">New Work Order</span>
+                        <span class="btn btn-primary btn-file pull-right btn-block">Contact Owner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

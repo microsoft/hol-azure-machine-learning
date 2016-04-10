@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Fabrikam Aircraft Maintenance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/bootstrap-datepicker3.css" />
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/themes/flat-blue.css">
+    <link href="~/Content/powerbi.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+
+    <style>
+        #aircrafts .page-header,
+        #aircrafts .page-header h1 { 
+            margin-top:0;
+        }
+
+        #aircrafts .search-box-wrapper {
+            background-color:#EEE;
+            margin:-20px -30px 15px -30px;
+            border-top:1px solid #e3e3e3;
+            border-bottom:1px solid #e3e3e3;
+            box-shadow:0 4px 4px -2px rgba(0,0,0,0.05);
+        }
+
+        #aircrafts .search-box {
+            max-width:900px;
+            margin: 0 auto;
+        }
+
+            #aircrafts .search-box .well {
+                border-radius: 0;
+                background-color:rgba(245,245,245,.5);
+                border-color: #66afe9;
+            }
+
+            #aircrafts .search-box .well:nth-child(2n) {
+                background-color:rgba(240,240,240,1);
+            }
+
+            #aircrafts .search-box .well:hover {
+                cursor: pointer;
+                border-color: #66afe9;
+                -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            }
+
+                #aircrafts .search-box .well h3 {
+                    margin-top: 0;
+                    color: rgba(34,167,240,.9);
+                }
+
+                #aircrafts .search-box .well .col {
+                    margin-bottom: 0;
+                }
+
+        #aircrafts .search-box select {
+            display:block;
+            height:34px;
+            width:100%;
+            border: 1px solid #ccc;
+            font-size:14px;
+            color:#555;
+            padding-left:5px;
+        }
+
+        #aircrafts .select2.select2-container {
+            display: block;
+            width: 100% !important;
+            height: 34px;
+        }
+
+        #aircrafts .select2-container--default .select2-selection--single {
+            border: 1px solid #ccc;
+            border-radius:0;
+            height: 34px;
+        }
+
+            #aircrafts .select2-container--default .select2-selection--single:active,
+            #aircrafts .select2-container--default .select2-selection--single:hover,
+            #aircrafts .select2-container--default .select2-selection--single:focus {
+                border-color: #66afe9;
+                -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            }
+
+            #aircrafts .select2-container--default .select2-selection--single > span {
+                color: #555;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                height: 34px;
+                padding-top:2px;
+            }
+            #aircrafts .input-group-addon {
+                border-radius:0;
+            }
+    </style>
+</head>
+<body class="flat-blue">
+    <div class="app-container expanded">
+        <div class="row content-container">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-expand-toggle">
+                            <i class="fa fa-bars icon"></i>
+                        </button>
+                        @RenderSection("Breadcrumbs", false)
+                        <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-th icon"></i>
+                        </button>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-times icon"></i>
+                        </button>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-comments-o"></i></a>
+                            <ul class="dropdown-menu animated fadeInDown">
+                                <li class="title">
+                                    Notification <span class="badge pull-right">0</span>
+                                </li>
+                                <li class="message">
+                                    No new notification
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown danger">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-star-half-o"></i> 4</a>
+                            <ul class="dropdown-menu danger  animated fadeInDown">
+                                <li class="title">
+                                    Notification <span class="badge pull-right">4</span>
+                                </li>
+                                <li>
+                                    <ul class="list-group notifications">
+                                        <a href="#">
+                                            <li class="list-group-item">
+                                                <span class="badge">1</span> <i class="fa fa-exclamation-circle icon"></i> new registration
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="list-group-item">
+                                                <span class="badge success">1</span> <i class="fa fa-check icon"></i> new orders
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="list-group-item">
+                                                <span class="badge danger">2</span> <i class="fa fa-comments icon"></i> customers messages
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="list-group-item message">
+                                                view all
+                                            </li>
+                                        </a>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown profile">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Lara <span class="caret"></span></a>
+                            <ul class="dropdown-menu animated fadeInDown">
+                                <li class="profile-img">
+                                    <img src="../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                                </li>
+                                <li>
+                                    <div class="profile-info">
+                                        <h4 class="username">Lara Rubbelke</h4>
+                                        <p>lara@fabrikam-air-maintenance.com</p>
+                                        <div class="btn-group margin-bottom-2x" role="group">
+                                            <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Profile</button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="side-menu sidebar-inverse">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="side-menu-container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <div class="icon fa fa-paper-plane"></div>
+                                <div class="title">Fabrikam Aircraft</div>
+                            </a>
+                            <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                                <i class="fa fa-times icon"></i>
+                            </button>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            @{
+                                var className = Request.Path == "/" && Request.QueryString.Count == 0 ? "active" : "";
+                            }
+                            <li class="@className">
+                                <a href="/">
+                                    <span class="icon fa fa-home"></span><span class="title">Home</span>
+                                </a>
+                            </li>
+                            @{
+                                className = Request.Path.ToLower().Contains("/aircraft") ? "active" : "";
+                            }
+                            <li class="@className">
+                                <a href="/Aircraft">
+                                    <span class="icon fa fa-fighter-jet"></span><span class="title">Aircraft</span>
+                                </a>
+                            </li>
+                            @{
+                                className = Request.Path == "/Parts" && Request.QueryString.Count == 0 ? "active" : "";
+                            }
+                            <li class="@className">
+                                <a href="/">
+                                    <span class="icon fa fa-cubes"></span><span class="title">Parts</span>
+                                </a>
+                            </li>
+                            @{
+                                className = Request.Path.ToLower().Contains("/workorder") ? "active" : "";
+                            }
+                            <li class="@className">
+                                <a href="/">
+                                    <span class="icon fa fa-wrench"></span><span class="title">Work Orders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="collapse" data-target="#reports-nav" class="accordion-heading">
+                                    <span class="icon fa fa-bar-chart"></span><span class="title">Reports</span>
+                                </a>
+                                <!-- Dropdown level 1 -->
+                                @{
+                                    var expandFirstLevel = (Request.Path.ToLower().Contains("/upload") && Request.QueryString.Count == 0) ||
+                                                            (Request.Path.ToLower().Contains("/report") && Request.QueryString.Count > 0) 
+                                                            ? "in" : "";
+                                }
+                                <ul class="nav-secondary nav-list collapse panel-collapse @expandFirstLevel" id="reports-nav">
+                                    @{
+                                        var uploadClassName = Request.Path.ToLower().Contains("/upload") && Request.QueryString.Count == 0 ? "active" : "";
+                                    }
+                                    <li class="@uploadClassName">
+                                        <a href="/Dashboard/Upload">
+                                            <span class="icon fa fa-upload"></span><span class="title">Upload Custom Report</span>
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    @Html.Action("Reports", "Dashboard")
+                                </ul>
+                            </li>                                           
+                            <li>
+                                <a href="/">
+                                    <span class="icon fa fa-cog"></span><span class="title">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </div>
+            <!-- Main Content -->
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+                <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2016 Copyright.
+            </div>
+        </footer>
+        <div>
+        <!-- Javascript Libs -->
+        <script type="text/javascript" src="/lib/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/lib/js/Chart.min.js"></script>
+        <script type="text/javascript" src="/lib/js/bootstrap-switch.min.js"></script>
+        <script type="text/javascript" src="/lib/js/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="/lib/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/lib/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="/lib/js/select2.full.min.js"></script>
+        <script type="text/javascript" src="/lib/js/ace/ace.js"></script>
+        <script type="text/javascript" src="/lib/js/ace/mode-html.js"></script>
+        <script type="text/javascript" src="/lib/js/ace/theme-github.js"></script>
+        <!-- Javascript -->
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script src="~/Scripts/powerbi.js"></script>
+        @RenderSection("Scripts", false)
+</body>
+</html>

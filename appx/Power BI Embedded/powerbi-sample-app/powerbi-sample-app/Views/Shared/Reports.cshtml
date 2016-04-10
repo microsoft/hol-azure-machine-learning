@@ -1,0 +1,39 @@
+﻿@model ReportsViewModel
+@{
+    Layout = null;
+
+    var classNames = "panel panel-default dropdown";
+
+    if (this.Request.Path.IndexOf("Report") > -1)
+    {
+        classNames += " active";
+    }
+}
+
+@foreach (var workspace in Model.Workspaces)
+{
+    <li>
+        <!-- Dropdown level 2 -->
+        <div class="accordion-heading">
+            <a data-toggle="collapse" data-parent="#reports-nav" class="accordion-toggle" href="#reports-fleet-history">
+                <span class="icon fa fa-line-chart"></span>
+                <span class="title">@workspace.DisplayName</span>
+            </a>
+        </div>
+        @{
+            var expandSecondLevel = Request.Path.ToLower().Contains("/report") && Request.QueryString.Count > 0 ? "in" : "";
+        }
+        <ul class="nav-secondary nav-list collapse @expandSecondLevel" id="reports-fleet-history" aria-expanded="true" style="">
+            @foreach (var report in workspace.Reports)
+            {
+                var reportClass = Request.QueryString["reportId"] == report.Id ? "active" : "";
+                <li class="@reportClass">
+                    <a href="@Url.Action("Report", new { workspaceId = workspace.WorkspaceId, reportId = report.Id })">
+                        <span class="icon fa fa-area-chart "></span>
+                        <span class="title">@report.Name</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </li>
+}

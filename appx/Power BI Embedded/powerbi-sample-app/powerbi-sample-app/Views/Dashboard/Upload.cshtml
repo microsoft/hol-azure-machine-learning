@@ -1,0 +1,88 @@
+﻿@model ReportUploadModel
+@section Breadcrumbs{
+    <ol class="breadcrumb navbar-breadcrumb">
+        <li>Reports</li>
+        <li class="active">Upload Power BI Report</li>
+    </ol>
+}
+
+<div class="side-body padding-top">
+    <div class="container">
+        <div>
+            <div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div class="page-header">
+                                <h1>Upload Custom Power BI Report</h1>
+                                Upload your custom <b>Power BI</b> report to be embedded in the application. You have options how you share the availability of this report.
+                            </div>
+                            @using (Html.BeginForm("Upload", "Dashboard", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="form_group file_select_group">
+                                    <label for="PbixReport">Report File:</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" readonly>
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-primary btn-file">
+                                                Browse&hellip; <input type="file" name="PbixReport">
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form_group">
+                                    <label for="ReportName">Name:</label>
+                                    <input type="text" class="form-control" name="ReportName">
+                                </div>
+                                <div class="form_group">
+                                    <label for="ReportCategory">Category:</label>
+                                    @Html.DropDownList("ReportCategory", ViewBag.ReportCategory as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                </div>
+                                <div class="form_group">
+                                    <label for="ReportName">or New Category:</label>
+                                    <input type="text" class="form-control" name="NewReportCategory">
+                                </div>
+                                <div class="form_group">
+                                    <label>Share:</label>
+                                    <br />
+                                    <label class="radio-inline"><input type="radio" name="ShareOption" checked>Private</label>
+                                    <label class="radio-inline"><input type="radio" name="ShareOption">My Division</label>
+                                    <label class="radio-inline"><input type="radio" name="ShareOption">All Company Users</label>
+                                    <label class="radio-inline"><input type="radio" name="ShareOption">Everyone</label>
+                                </div>
+                                <br />
+                                <button type="submit" class="btn btn-primary">Upload</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $(document).on('change', '.btn-file :file', function() {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [numFiles, label]);
+            });
+            $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if( input.length ) {
+                    input.val(log);
+                } else {
+                    if( log ) alert(log);
+                }
+
+            });
+            $("input[type=text]").first().focus();
+        });
+    </script>
+}

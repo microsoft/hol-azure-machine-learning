@@ -1,0 +1,233 @@
+﻿@model powerbi_sample_app.Models.WorkOrderViewModel
+
+@{
+    ViewBag.Title = "WorkOrderDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Breadcrumbs{
+    <ol class="breadcrumb navbar-breadcrumb">
+        <li>Work Order</li>
+        <li>Create</li>
+    </ol>
+}
+
+@section Scripts {
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/lib/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        var model = @Html.Raw(Json.Encode(Model));
+        var completiondate = "@Model.RequiredCompletionDate.ToString("MM/dd/yyyy")";
+        console.log(completiondate);
+        console.log(model);
+        function addDiscrepancyRow() {
+            var html = 
+                '<tr class="discrepancy">' +
+                    '<td width="10%">' +
+                        '<select class="form-control" name="discrepancy_state">' +
+                            '<option value="Immediate">Immediate</option>' +
+                            '<option value="Preventative">Preventative</option>' +
+                            '<option value="Required">Required</option>' +
+                            '<option value="In Maintenance">In Maintenance</option>' +
+                        '</select>' +
+                    '</td>' +
+                    '<td width="10%">' +
+                        '<select class="form-control" name="discrepancy_type">' +
+                            '<option value="Anomaly">Anomaly</option>' +
+                            '<option value="Maintenance Message">Maintenance Message</option>' +
+                            '<option value="Recommendation">Recommendation</option>' +
+                        '</select>' +
+                    '</td>' +
+                    '<td>' +
+                        '<input type="text" class="form-control" name="description" />' +
+                    '</td>' +
+                    '<td>' +
+                        '<select class="form-control" name="reporter">' +
+                            '<option value="James Baker">James Baker</option>' +
+                            '<option value="Lara Rubbelke">Lara Rubbelke</option>' +
+                            '<option value="Mat Velloso">Mat Velloso</option>' +
+                            '<option value="Haishi Bai">Haishi Bai</option>' +
+                            '<option value="Elliott Miller">Elliott Miller</option>' +
+                        '</select>' +
+                    '</td>' +
+                    '<td>' +
+                        '<input type="text" class="form-control" name="hours">' +
+                    '</td>' +
+                '</tr>'
+            
+            $("#discrepancies tbody").append(html);
+        }
+        function populateDiscrepancy(element, discrepancy) {
+            console.log(discrepancy);
+            $("select[name='discrepancy_state']", element).val(discrepancy.State);
+            $("select[name='discrepancy_type']", element).val(discrepancy.DiscrepancyType);
+            $("input[name='description']", element).val(discrepancy.Description);
+            $("input[name='hours']", element).val(discrepancy.Hours);
+            $("select[name='reporter']", element).val(discrepancy.Reporter);
+        }
+        $(document).ready(function () {
+            $("input[name='completiondate']").val(completiondate);
+            $(".input-group.date").datepicker({});
+            $("input[name='name']").val(model.WorkOrderName);
+            $("input[name='blocking']").val(model.BlockingWorkOrders);
+            var numDiscrepancies = model.Discrepancies.length;
+            for(var i =0; i< numDiscrepancies; i++) {
+                addDiscrepancyRow();
+            }
+            var discrepancytablerows = $(".discrepancy");
+            $.each(model.Discrepancies, function(idx, discrepancy) {
+                populateDiscrepancy(discrepancytablerows[idx], discrepancy);
+            });
+            $("#addDiscrepancy").click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $("#discrepancies_label").show();
+                $("#discrepancies").show();
+                addDiscrepancy(null);
+            });
+            $("input[type=text]").first().focus();
+        });
+
+    </script>
+}
+<div id="workorder-create" class="side-body padding-top">
+    <div class="row">
+        <div class="col-md-6" id="workorder_details">
+            <div class="form_group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class="form_group">
+                <label for="name">Aircraft</label>
+                <select class="form-control" name="aircraft">
+                    <option>1AOFA - Puget Airlines</option>
+                    <option>Contoso ABF 1345145</option>
+                    <option>Contoso BRM 7734132</option>
+                    <option>Contoso LOE 1319859</option>
+                    <option>Contoso NAX 1532958</option>
+                    <option>Contoso LOE 5193582</option>
+                    <option>Contoso WOG 2359182</option>
+                    <option>Contoso WOG 1958293</option>
+                    <option>Contoso GVG 8293048</option>
+                    <option>Contoso GVG 8920394</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="blocking">Blocking Work Orders</label>
+                <input type="text" class="form-control" name="blocking">
+            </div>
+            <div class="form_group">
+                <label for="completiondate">Required Completion Date</label>
+                <div class="input-group date">
+                    <input name="completiondate" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 0px 10px 0px 0px">
+                <div class="form_group">
+                    <label for="access_code">Access Code</label>
+                    <input type="text" class="form-control" name="access_code">
+                </div>
+                <div class="form_group">
+                    <label for="status">Status</label>
+                    <select class="form-control" name="status">
+                        <option>Opened</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 0px 0px">
+                <div class="form_group">
+                    <label for="assignment">Assignment</label>
+                    <input type="text" class="form-control" name="assignment">
+                </div>
+                <div class="form_group">
+                    <label for="order_num">Order #</label>
+                    <input type="text" class="form-control" name="order_num">
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="special_instructions">Special Instructions</label>
+                <input type="text" class="form-control" name="special_instructions">
+            </div>
+        </div>
+        <div class="col-md-6" id="aircraft_details">
+            <h4>Aircraft Details - 1AOFA - Puget Airlines</h4>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Make</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">Boeing</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Model</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">787</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Configuration</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">C25Y322</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Engine Make</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">General Electric</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Engine Model</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">GEnx-1b</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Fan Diameter</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">112in</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Tachometer</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">1024</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Work Orders</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">2</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Last Maintenance</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">3/22/2016</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h4 id="discrepancies_label">Discrepancies</h4>
+    <table class="table" id="discrepancies">
+        <thead>
+            <tr>
+                <th width="10%">State</th>
+                <th width="10%">Type</th>
+                <th>Description</th>
+                <th width="15%">Reporter</th>
+                <th width="10%">Estimate (Hours)</th>
+            </tr>
+        </thead>
+        <tbody>
+                
+        </tbody>
+    </table>
+    <button id="addDiscrepancy" class="btn btn-primary">Add a Discrepancy</button>
+    <br/>
+    <br />
+    <button type="submit" class="btn btn-primary">Create Work Order</button>
+</div>

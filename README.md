@@ -1,5 +1,7 @@
 # Azure Machine Learning Hands on Labs
 
+This content is designed for audience without any prior Machine learning knowledge. It starts from very basics and goes to advanced topics. We will try to keep this content live and include more and more advanced lab sessions with real life scenarious. Thanks for your support and feedback to make this content better. 
+
 ### **Suggested timeline for Azure Machine Learning Hands On Lab (HOL)**
 
 | Time (min) | Activity |

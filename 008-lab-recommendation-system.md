@@ -7,7 +7,10 @@ In this lab we will deploy Recommendation system on Azure Machine Learning syste
     - Item recommendation to specific or new users. Here the items may be DVDs, restaurants, bicycles, foods etc.
  
 ### 8.1.1. Objectives
+This lab aims to demonstrate how to use Recommendation system within Azure ML workspace. It shows item recommendation to a new and existing users, shows how to find related items or related users that have same tendency.   
+
 ### 8.1.2. Requirements
+Knowledge of AML web service deployment.  
 
 ## 8.2. Generate synthetic data
 To be able to make some analysis at first sight, using Microsoft Excel we will generate small amount of a sythetic data and create a test experiment using the Matchbox Recommender modules. We will create three CSV files (tables of data), 1) users.csv 2) items.csv 3) ratings.csv with following content (check the appendix folder for a copy of the files):

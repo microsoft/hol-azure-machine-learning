@@ -89,7 +89,7 @@ To use matchbox recommendation system we need **at least the ratings table**, ot
     
 12. You may observed the two similar property value in almost all *Recommender prediction kind* type. These two options are either "From Rated Items" or "From All Items". In production mode, when you publish the solution as web service, your model property should set to "From All Items" but if you are evaluating the system, testing it etc. you can switch to "From Rated Items" to see if your model works as expected based on the existing rating information.   
 
-## 8.4. Related users
+## 8.4. Find related users
 Assume you want to match your users', customers' profiles, try to find related users or users that have similar tendency. In such case you may use the "Related Users" value set in the **Recommender prediction kind** property.  
 
 1. Set the *Recommender prediction kind** property to "Related Users"  
@@ -100,7 +100,7 @@ Assume you want to match your users', customers' profiles, try to find related u
 
 3. As you can see from the output, in order users c4, c6, c7, c3, c5 are related with user **c1**. If you check our data tables or the visual illustration of the user-item-useritem ratings triplets, you will see that users **c4, C6** and so forth, all like vegetables like user **c1**. Also as we constrained our system to propose 5 recommendation, it proposed user **c5** related to user **c1** even the profile is grill. Becuase c5 rated the same item (restaurant) as c1 (event dont liked it).
 
-## 8.5. Related items
+## 8.5. Find related items
 Similar to the experiment in the previous lab session, it is possible to find related items. This approach can be used to recommend items to a user based on the related items. i.e. if item X and Y have similar profile or X and Y bought together, then you may recommend item Y to a user who bought or selects item X.
 
 1. Set the *Recommender prediction kind** property to "Related Items"  
@@ -111,7 +111,7 @@ Similar to the experiment in the previous lab session, it is possible to find re
 
 1. You will see the grill restaurants are related to each other and vegeterian restaurants too.  
 
-## What to recommend for a new user?
+## What to recommend for a brand new user?
 Above samples are using existing users. i.e. recommending a new, second or third item to buy to an existing user in the system. Or to advertise second, third related items to the one that the user is viewing etc. What about if we have a new user registered to the system but haven't made any rating yet? To be able recommend items etc. for a new user, you should definitely work with input data triplet (with optional data, users and items available). Also you must have the features of the new user (In our case it is the type column of the user table). Now lets develop a recommender system for new users:
 
 1. Set parameters of "Score Matchbox Recommender" to **3** with below settings.  

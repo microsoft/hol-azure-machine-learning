@@ -13,7 +13,7 @@ This content is designed for audience without any prior Machine learning knowled
 | 60         | Lab4 - [Develop and Consume AzureML Models](./004-lab-azureml-experiment.md) |
 | 45         | Lab5 - [Custom Scripts (R & Python) in AML](./005-lab-custom-script-r-python.md) |
 | 60         | Lab6 - [Evaluate model performance in AML](./006-lab-model-evaluation.md) |
-| 60         | Lab7 - [Evaluate model performance in AML](./007-lab-production-ops.md) |
+| 60         | Lab7 - [Azure ML Batch Score, Retrain, Production and Automatization](./007-lab-production-ops.md) |
 | 45         | Lab8 - [Recommendation System](./008-lab-recommendation-system.md) |
 
 ### **Detailed contents of the HOL**

@@ -1,0 +1,1941 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Azure.Devices</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Azure.Devices.AmqpFeedbackReceiver.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.AmqpServiceClient.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ApiResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ArgumentMustBeNonNegative">
+            <summary>
+              Looks up a localized string similar to The value of this argument must be non-negative..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ArgumentMustBePositive">
+            <summary>
+              Looks up a localized string similar to The value of this argument must be positive..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ConnectionStringIsNotWellFormed">
+            <summary>
+              Looks up a localized string similar to The connection string is not well formed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.DeviceIdInvalid">
+            <summary>
+              Looks up a localized string similar to The device identifier {0} is invalid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.DeviceIdNotSet">
+            <summary>
+              Looks up a localized string similar to The id of the device was not set..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.DeviceKeysInvalid">
+            <summary>
+              Looks up a localized string similar to Either both primary and secondary keys must be specified or neither one to auto generate on service side..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ETagNotSetWhileDeletingDevice">
+            <summary>
+              Looks up a localized string similar to The ETag should be set while deleting the device..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ETagNotSetWhileUpdatingDevice">
+            <summary>
+              Looks up a localized string similar to The ETag should be set while updating the device..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ETagSetWhileRegisteringDevice">
+            <summary>
+              Looks up a localized string similar to The ETag should not be set while registering the device..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.FailedToSerializeUnsupportedType">
+            <summary>
+              Looks up a localized string similar to Serialization operation failed due to unsupported type {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.HostNameIsNull">
+            <summary>
+              Looks up a localized string similar to The HostName is null..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.InvalidConnectionStringEndpoint">
+            <summary>
+              Looks up a localized string similar to The endpoint in the connection string is invalid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.InvalidPassword">
+            <summary>
+              Looks up a localized string similar to The password is not valid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.InvalidPropertyInConnectionString">
+            <summary>
+              Looks up a localized string similar to The connection string has an invalid value for property: {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.InvalidUser">
+            <summary>
+              Looks up a localized string similar to The User is not valid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.MessageBodyConsumed">
+            <summary>
+              Looks up a localized string similar to The message body cannot be read multiple times. To reuse it store the value after reading..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.MessageDisposed">
+            <summary>
+              Looks up a localized string similar to This messaging entity has already been closed, aborted, or disposed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.MissingPropertyInConnectionString">
+            <summary>
+              Looks up a localized string similar to The connection string is missing the property: {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.OffsetExceedsBufferSize">
+            <summary>
+              Looks up a localized string similar to The specified offset exceeds the buffer size ({0} bytes)..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.ParameterCannotBeNullOrWhitespace">
+            <summary>
+              Looks up a localized string similar to The parameter {0} cannot be null, empty or whitespace..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.PropertyIsNotValidUri">
+            <summary>
+              Looks up a localized string similar to The {0} property is not a valid Uri.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.RegistryManagerInstanceAlreadyClosed">
+            <summary>
+              Looks up a localized string similar to The RegistryManager instance was already closed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ApiResources.SizeExceedsRemainingBufferSpace">
+            <summary>
+              Looks up a localized string similar to The specified size exceeds the remaining buffer space ({0} bytes)..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Common.Exceptions.TooManyDevicesException">
+            <summary>
+            Exception thrown when the list of input devices is too large for an operation 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.Exceptions.TooManyDevicesException.#ctor(System.String)">
+            <summary>
+            ctor which takes an error message
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.Exceptions.TooManyDevicesException.#ctor(System.String,System.String)">
+            <summary>
+            ctor which takes an error message and a tracking id
+            </summary>
+            <param name="message"></param>
+            <param name="trackingId"></param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.Exceptions.TooManyDevicesException.#ctor(System.String,System.Exception)">
+            <summary>
+            ctor which takes an error message alongwith an inner exception
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.Exceptions.DeviceInvalidResultCountException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.Exceptions.DeviceMaximumQueueDepthExceededException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.Exceptions.MessageTooLargeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.EnumerableExtensions.AnySlim``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Avoid allocating if possible (if ICollection is supported)
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.EnumerableExtensions.ToListSlim``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <summary>
+            If the underlying type already supports an IList implementation then don't allocate a new List.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Common.MemberInfoExtensions">
+            <summary>
+            Extended reflection support
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.MemberInfoExtensions.GetFullyQualifiedMemberName(System.Reflection.MemberInfo)">
+            <summary>
+            Given a member reference, find its fully qualified name (assembly, class, member)
+            </summary>
+            <param name="member">The member whose name is desired</param>
+            <returns>The fully qualified member name, including assembly, namespace, class, and member</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.InternalBufferManager.PreallocatedBufferManager.ReturnBuffer(System.Byte[])">
+            <summary>
+            Returned buffer must have been acquired via a call to TakeBuffer
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Common.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ActionItemIsAlreadyScheduled">
+            <summary>
+              Looks up a localized string similar to The ActionItem was scheduled for execution but has not completed yet..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ArgumentNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The argument {0} is null or empty..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ArgumentNullOrWhiteSpace">
+            <summary>
+              Looks up a localized string similar to The argument {0} is null or white space..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ArgumentOutOfRange">
+            <summary>
+              Looks up a localized string similar to The value supplied must be between {0} and {1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.AsyncCallbackThrewException">
+            <summary>
+              Looks up a localized string similar to An AsyncCallback threw an exception..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.AsyncResultAlreadyEnded">
+            <summary>
+              Looks up a localized string similar to End cannot be called twice on the same AsyncResult..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.AsyncResultCompletedTwice">
+            <summary>
+              Looks up a localized string similar to The IAsyncResult implementation &apos;{0}&apos; tried to complete a single operation multiple times. This could be caused by an incorrect application of IAsyncResult implementation or other extensibility code, such as an IAsyncResult that returns incorrect CompletedSynchronously values, or invokes the AsyncCallback multiple times..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.AsyncTransactionException">
+            <summary>
+              Looks up a localized string similar to An exception was thrown from a TransactionScope used to flow a transaction into an asynchronous operation..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.BufferAllocationFailed">
+            <summary>
+              Looks up a localized string similar to Failed to allocate a managed memory buffer of {0} bytes. The amount of available memory may be low..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.BufferAlreadyReclaimed">
+            <summary>
+              Looks up a localized string similar to The buffer has already been reclaimed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.BufferIsNotRightSizeForBufferManager">
+            <summary>
+              Looks up a localized string similar to This buffer cannot be returned to the buffer manager because it is the wrong size..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.CreateSessionOnClosingConnection">
+            <summary>
+              Looks up a localized string similar to Can&apos;t create session when the connection is closing..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.CreditListenerAlreadyRegistered">
+            <summary>
+              Looks up a localized string similar to Credit listener is already registered..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DeviceAlreadyExists">
+            <summary>
+              Looks up a localized string similar to A device with ID &apos;{0}&apos; is already registered..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DeviceImportError">
+            <summary>
+              Looks up a localized string similar to Import error for device ID &apos;{0}&apos;: {1}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DeviceKeyLengthInvalid">
+            <summary>
+              Looks up a localized string similar to The primary and secondary keys must be between {0} and {1} bytes in length..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DeviceNotFound">
+            <summary>
+              Looks up a localized string similar to &quot;Device {0} at IotHub {1} not registered&quot;.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DeviceNotRegistered">
+            <summary>
+              Looks up a localized string similar to A device with ID &apos;{0}&apos; is not registered..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DeviceQuotaExceededExceptionMessage">
+            <summary>
+              Looks up a localized string similar to Total number of devices on IotHub &apos;{0}&apos; exceeded the allocated quota. Max allowed device count : &apos;{1}&apos;, current device count : &apos;{2}&apos;. Consider increasing the units for this hub to increase the quota..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DispositionListenerAlreadyRegistered">
+            <summary>
+              Looks up a localized string similar to Disposition listener is already registered..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.DispositionListenerSetNotSupported">
+            <summary>
+              Looks up a localized string similar to Not supported when the disposition listener is set..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ErrorConvertingToChar">
+            <summary>
+              Looks up a localized string similar to Failed to convert to a char..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ETagMismatch">
+            <summary>
+              Looks up a localized string similar to ETag mismatch for device ID &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.FailFastMessage">
+            <summary>
+              Looks up a localized string similar to An unrecoverable error occurred. For diagnostic purposes, this English message is associated with the failure: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InternalServerError">
+            <summary>
+              Looks up a localized string similar to Internal server error..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidAsyncResult">
+            <summary>
+              Looks up a localized string similar to The AsyncResult object used to end this operation was not the object that was returned when the operation was initiated..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidAsyncResultImplementation">
+            <summary>
+              Looks up a localized string similar to An incorrect implementation of the IAsyncResult interface may be returning incorrect values from the CompletedSynchronously property or calling the AsyncCallback more than once. The type {0} could be the incorrect implementation..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidAsyncResultImplementationGeneric">
+            <summary>
+              Looks up a localized string similar to An incorrect implementation of the IAsyncResult interface may be returning incorrect values from the CompletedSynchronously property or calling the AsyncCallback more than once..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidBufferSize">
+            <summary>
+              Looks up a localized string similar to The buffer size is invalid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidDeviceLine">
+            <summary>
+              Looks up a localized string similar to Invalid device format in line: {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidFrameSize">
+            <summary>
+              Looks up a localized string similar to Invalid frame size:{0}, maximum frame size:{1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidNullAsyncResult">
+            <summary>
+              Looks up a localized string similar to A null value was returned from an asynchronous &apos;Begin&apos; method or passed to an AsyncCallback. Asynchronous &apos;Begin&apos; implementations must return a non-null IAsyncResult and pass the same IAsyncResult object as the parameter to the AsyncCallback..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.InvalidSemaphoreExit">
+            <summary>
+              Looks up a localized string similar to Object synchronization method was called from an unsynchronized block of code..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.IOThreadTimerCannotAcceptMaxTimeSpan">
+            <summary>
+              Looks up a localized string similar to IOThreadTimer cannot accept Timespan.MaxValue..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.IotHubSuspendedException">
+            <summary>
+              Looks up a localized string similar to IotHub &apos;{0}&apos; is suspended.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.MessageListenerAlreadyRegistered">
+            <summary>
+              Looks up a localized string similar to Message listener is already registered..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.MessageQuotaExceededExceptionMessage">
+            <summary>
+              Looks up a localized string similar to Total number of messages on IotHub &apos;{0}&apos; exceeded the allocated quota. Max allowed message count : &apos;{1}&apos;, current message count : &apos;{2}&apos;. Send and Receive operations are blocked for this hub until the next UTC day. Consider increasing the units for this hub to increase the quota..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.NotSupportFrameCode">
+            <summary>
+              Looks up a localized string similar to Unsupported type {0} for array..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ObjectIsReadOnly">
+            <summary>
+              Looks up a localized string similar to This object is read-only and cannot be modified..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.OperationTimedOut">
+            <summary>
+              Looks up a localized string similar to The operation timed out..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ServerCertificateNotSet">
+            <summary>
+              Looks up a localized string similar to Service certificate must be set..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ShipAssertExceptionMessage">
+            <summary>
+              Looks up a localized string similar to An unexpected failure occurred. Applications should not attempt to handle this error. For diagnostic purposes, this English message is associated with the failure: {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.StringIsNotBase64">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; is not a valid Base64 encoded string..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.TargetHostNotSet">
+            <summary>
+              Looks up a localized string similar to TargetHost must be set..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.TimeoutMustBeNonNegative">
+            <summary>
+              Looks up a localized string similar to Argument {0} must be a non-negative timeout value. The provided value was {1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.TimeoutMustBePositive">
+            <summary>
+              Looks up a localized string similar to Argument {0} must be a positive timeout value. The provided value was {1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.UnspecifiedError">
+            <summary>
+              Looks up a localized string similar to An error occurred..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.UserErrorFormat">
+            <summary>
+              Looks up a localized string similar to {0} If you contact a support representative please include this correlation identifier: {1}, timestamp: {2:u}, errorcode: IH{3}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.Resources.ValueMustBeNonNegative">
+            <summary>
+              Looks up a localized string similar to The value of this argument must be non-negative..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Common.CryptoKeyGenerator">
+            <summary>
+            Utility methods for generating cryptographically secure keys and passwords
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.BearerTokenScheme">
+            <summary>
+            The scheme name for Bearer token auth.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.CertificateScheme">
+            <summary>
+            The scheme name to use for certificate authentication handler
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.AuthenticationScheme">
+            <summary>
+            The claim type for the authentication scheme.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.ResourceProviderClientAccessRole">
+            <summary>
+            The role capable of invoking ResourceProvider from CSM. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.ResourceProviderAdminAccessRole">
+            <summary>
+            The role capable of invoking ResourceProvider from ACIS
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.ResourceProviderFullAccessRole">
+            <summary>
+            For use when giving permissions to both resource provider roles
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.NonSecureConnection">
+            <summary>
+            Authentication failed message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.AuthenticationFailed">
+            <summary>
+            Authentication failed message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.AuthorizationFailed">
+            <summary>
+            Authorization failed message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.MissingCertificate">
+            <summary>
+            Missing certificate message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.DefaultKeyLengthInBytes">
+            <summary>
+            Default size of device gateway and device keys
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.MinKeyLengthInBytes">
+            <summary>
+            Minimum size of device gateway and device keys
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.MaxKeyLengthInBytes">
+            <summary>
+            Maximum size of device gateway and device keys
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.WwwAuthenticateHeader">
+            <summary>
+            The name of the authentication challenge response header.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.DefaultOwnerSaSKeyName">
+            <summary>
+            Default Owner SaS Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.DefaultServiceSaSKeyName">
+            <summary>
+            Default Service SaS Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.DefaultDeviceSaSKeyName">
+            <summary>
+            Default Device SaS Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.DefaultRegistryReadSaSKeyName">
+            <summary>
+            Default Device Registry Read Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.DefaultRegistryReadWriteSaSKeyName">
+            <summary>
+            Default Device Registry ReadWrite Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.AdminSaSKeyName">
+            <summary>
+            Admin SaS Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.SaSKeyLength">
+            <summary>
+            SaS Key length.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.SasKeyNameMaxLength">
+            <summary>
+            Maximum SaS Key Name Length
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.SharedAccessKey">
+            <summary>
+            Shared Access Key
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.SharedAccessKeyFieldName">
+            <summary>
+            Shared Access Key Field Name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.Security.SecurityConstants.SharedAccessKeyFullFieldName">
+            <summary>
+            Shared Access Key Full Field Name
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.TaskHelpers.CreateTask(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},System.Object)">
+            <summary>
+            Create a Task based on Begin/End IAsyncResult pattern.
+            </summary>
+            <param name="begin"></param>
+            <param name="end"></param>
+            <param name="state"> 
+            This parameter helps reduce allocations by passing state to the Funcs. e.g.:
+             await TaskHelpers.CreateTask(
+                 (c, s) => ((Transaction)s).BeginCommit(c, s),
+                 (a) => ((Transaction)a.AsyncState).EndCommit(a),
+                 transaction);
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Common.TaskHelpers.CreateTransactionalTask(System.Transactions.Transaction,System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},System.Object)">
+            <summary>
+            Create a Task based on Begin/End IAsyncResult pattern.
+            </summary>
+            <param name="transaction">The transaction (optional) to use.  If not null a TransactionScope will be used when calling the begin Func.</param>
+            <param name="begin"></param>
+            <param name="end"></param>
+            <param name="state"> 
+            This parameter helps reduce allocations by passing state to the Funcs. e.g.:
+             await TaskHelpers.CreateTask(
+                 (c, s) => ((Transaction)s).BeginCommit(c, s),
+                 (a) => ((Transaction)a.AsyncState).EndCommit(a),
+                 transaction);
+            </param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Common.Tracing.EventTraceActivity">
+            <summary>
+            This class holds the ActivityId that would be set on the thread for ETW during the trace. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.CorrelationId">
+            <summary>
+            Used in message responses and feedback
+            Specifies the tracing correlation Id for the request; the resource provider *must* log this 
+            so that end-to-end requests can be correlated across Azure. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.MessageId">
+            <summary>
+            [Required for two way requests] Used to correlate two-way communication. 
+            Format: A case-sensitive string ( up to 128 char long) of ASCII 7-bit alphanumeric chars
+             + {'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. 
+            Non-alphanumeric characters are from URN RFC.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.SequenceNumber">
+            <summary>
+            iothub-sequencenumber
+            A monotonically increasing identifier for each message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.To">
+            <summary>
+            [Required] Destination of the message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.EnqueuedTime">
+            <summary>
+            Time when the Message was received by the server
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.DeliveryCount">
+            <summary>
+            Number of times the message has been previously delivered
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ExpiryTime">
+            <summary>
+            [Optional] The time when this message is considered expired
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.UserId">
+            <summary>
+            [Required in feedback messages] Used to specify the origin of messages generated by IOT hub. Possible value: “{hub name}/”
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.Operation">
+            <summary>
+            [Optional] Used to specify the role of the message in the communication pattern. 
+            Possible values: 
+                “d2c”: telemetry message (device to cloud) 
+                “c2d”: notification 
+                “d2creq”: inquiry request 
+                “d2cres”: inquiry response 
+                “c2dreq”: command request 
+                “c2dres”: command response
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.Ack">
+            <summary>
+            [Optional] Used to specify the feedback required for the consumption of the message by the device. 
+            Possible values: 
+                “none”: no feedback 
+                “positive”: receive a feedback message if the message was consumed 
+                “negative”: receive a feedback message if the message expired without being completed by the device 
+                “full”: both positive and negative
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.MessageLockToken">
+            <summary>
+            The lock token of the retrieved message 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.MessageLockTimeout">
+            <summary>
+            Amount of time in seconds to lock message before abandoning the lock and allowing the message to be retrieved again
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.HttpAppPropertyPrefix">
+            <summary>
+            Prefix for all Application property Http Headers
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.HttpIotHubName">
+            <summary>
+            Internal HTTP custom headers
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ClientIpAddress">
+            <summary>
+            x-ms-client-ip-address
+            Set to the client IP address used in the request; this is required since the resource provider 
+            will not have access to the client IP.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.PrincipalName">
+            <summary>
+            x-ms-client-principal-name
+            Set to the principal ID / UPN of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ClientTenantId">
+            <summary>
+            x-ms-client-tenant-id
+            Set to the tenant ID of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ClientAudience">
+            <summary>
+            x-ms-client-audience
+            Set to the tenant ID of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ClientIssuer">
+            <summary>
+            x-ms-client-issuer
+            Set to the issuer of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ClientObjectId">
+            <summary>
+            x-ms-client-object-id
+            Set to the object Id of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ClientAppId">
+            <summary>
+            x-ms-client-app-id
+            Set to the app Id of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ClientRequestId">
+            <summary>
+            x-ms-client-request-id
+            Caller-specified request ID, in the form of a GUID with no decoration such as curly braces 
+            (e.g. client-request-id: 9C4D50EE-2D56-4CD3-8152-34347DC9F2B0). 
+            A caller-defined value that identifies the given request.   If specified, this will be 
+            included in response information as a way to map the request. 
+            If the caller provides this header – the resource provider *must* log this with their 
+            traces to facilitate tracing a single request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ReturnClientRequestId">
+            <summary>
+            x-ms-return-client-request-id
+            Optional
+            True or false and indicates if a client-request-id should be provided.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ActivityId">
+            <summary>
+            x-ms-activity-id
+            The value that is used to pass activityID in REST API between services
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.ApiVersion">
+            <summary>
+            api-version
+            Specifies the version of the protocol used to make this request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.MicrosoftAsyncOperationHeaderName">
+            <summary>
+            Azure-AsyncOperation
+            Set to the URL where the result of the long running operation can be checked; to optionally be used in addition to the Location header.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Common.WebApi.CustomHeaderConstants.RequestId">
+            <summary>
+            x-ms-request-id
+            A unique identifier for the current operation, service generated.
+            All the resource providers *must* return this value in the response headers to facilitate debugging.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.WebApi.ResourceRequest.Location">
+            <summary>
+            TODO: hard code locations in enum
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Common.WebApi.ResourceRequest.Tags">
+            <summary>
+            TODO: No more than 15 tags, max length per key is 512 chars
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.AuthenticationMechanism">
+            <summary>
+            Used to specify the authentication mechanism used by a device.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.AuthenticationMethodFactory">
+            <summary>
+            Creates an instance of an implementation of <see cref="T:Microsoft.Azure.Devices.IAuthenticationMethod"/> based on known authentication parameters.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.AuthenticationMethodFactory.CreateAuthenticationWithSharedAccessPolicyKey(System.String,System.String)">
+            <summary>
+             Factory method to create a ServiceAuthenticationWithSharedAccessPolicyKey object
+            </summary>
+            <param name="policyName"> PolicyName </param>
+            <param name="key"> SharedAccessKeyValue </param>
+            <returns> an AuthenticationMethod object </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.AuthenticationMethodFactory.CreateAuthenticationWithSharedAccessPolicyToken(System.String,System.String)">
+            <summary>
+             Factory method to create a ServiceAuthenticationWithSharedAccessPolicyToken object
+            </summary>
+            <param name="policyName"> PolicyName </param>
+            <param name="token"> SharedAccessSignatureToken </param>
+            <returns> an AuthenticationMethod object </returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.DeliveryAcknowledgement">
+            <summary>
+            Specifies the different acknowledgement levels for message delivery.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.DeliveryAcknowledgement.None">
+            <summary>
+            Acknowledgement is NOT sent on delivery or failure.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.DeliveryAcknowledgement.NegativeOnly">
+            <summary>
+            Acknowledgement is sent only if delivery fails.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.DeliveryAcknowledgement.PositiveOnly">
+            <summary>
+            Acknowledgement is sent only on delivery succeeds.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.DeliveryAcknowledgement.Full">
+            <summary>
+            An acknowledgement is sent on delivery success or failure.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.DeliveryFailureReason">
+            <summary>
+            Specifies the different failure reasons for message delivery.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Device">
+            <summary>
+            contains device properties and their accessors.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.DeviceConnectionState">
+            <summary>
+            Specifies the different connection states of a device.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.BulkRegistryOperationResult">
+            <summary>
+            Encapsulates the result of a bulk registry operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.BulkRegistryOperationResult.IsSuccessful">
+            <summary>
+            Whether or not the operation was successful.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.BulkRegistryOperationResult.Errors">
+            <summary>
+            If the operation was not successful, this contains an array of DeviceRegistryOperationError objects.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.DeviceStatus">
+            <summary>
+            Specifies the different states of a device.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.EndpointKind">
+            <summary>
+            Endpoints exposed by IOT hub
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.EndpointKind.DeviceBound">
+            <summary>
+            sends commands to device
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.EndpointKind.Events">
+            <summary>
+            device telemetry ingress
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.EndpointKind.ServiceBound">
+            <summary>
+            inquiries from device -> cloud
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.EndpointKind.Feedback">
+            <summary>
+            acks/nacks from system -> cloud
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.EndpointKind.Response">
+            <summary>
+            correlated responses from device -> cloud
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ExportDevicesRequest">
+            <summary>
+            Used to provide parameters when requesting an export through the Resource Provider.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ExportImportDevice">
+            <summary>
+             contains device properties specified during export/import operation
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ExportImportDevice.#ctor">
+            <summary>
+            making default ctor public
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ExportImportDevice.#ctor(Microsoft.Azure.Devices.Device,Microsoft.Azure.Devices.ImportMode)">
+            <summary>
+            ctor which takes a Device object along with import mode
+            </summary>
+            <param name="device"></param>
+            <param name="importmode"></param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ExportImportDevice.Id">
+            <summary>
+            Id of the device
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ExportImportDevice.ETag">
+            <summary>
+            ETag of the device
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ExportImportDevice.ImportMode">
+            <summary>
+            ImportMode of the device
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ExportImportDevice.Status">
+            <summary>
+            Status of the device
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ExportImportDevice.StatusReason">
+            <summary>
+            StatusReason of the device
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.ExportImportDevice.Authentication">
+            <summary>
+            AuthenticationMechanism of the device
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ExportImportRequest">
+            <summary>
+            Used to provide storage parameters when making an export or import request.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.FeedbackBatch">
+            <summary>
+            Contains a batch of feedback records.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.FeedbackReceiver`1">
+            <summary>
+            Contains methods that services can use to perform feedback receive operations.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.FeedbackRecord">
+            <summary>
+            Contains properties of an individual feedback record. 
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.FeedbackStatusCode">
+            <summary>
+            Specifies the various feedback status codes for a command sent to a device.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.HttpRegistryManager.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.HttpRegistryManager.Dispose(System.Boolean)">
+            <summary>
+            Dispose resources
+            </summary>
+            <param name="disposing">
+            Governs disposable of managed and native resources
+            </param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.IAuthenticationMethod">
+            <summary>
+            Authentication interface to use for IoTHub communications.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ImportDevicesRequest">
+            <summary>
+            Used to provide parameters when requesting an import through the Resource Provider.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.DeviceRegistryOperationError">
+            <summary>
+            Encapsulates device registry operation error details.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.DeviceRegistryOperationError.DeviceId">
+            <summary>
+            The ID of the device that indicated the error.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.DeviceRegistryOperationError.ErrorCode">
+            <summary>
+            ErrorCode associated with the error.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.DeviceRegistryOperationError.ErrorStatus">
+            <summary>
+            Additional details associated with the error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ImportMode">
+            <summary>
+            Identifies the behavior when merging a device to the registry during import actions.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.PurgeMessageQueueResult">
+            <summary>
+            Result of a device message queue purge operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.PurgeMessageQueueResult.DeviceId">
+            <summary>
+            The ID of the device whose messages are being purged.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.PurgeMessageQueueResult.TotalMessagesPurged">
+            <summary>
+            The total number of messages that were purged from the device's queue.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.IotHubConnection.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.IotHubConnectionStringBuilder">
+            <summary>
+            Builds a connection string for the IoT Hub service based on the properties populated by the user.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.JobProperties">
+            <summary>
+            Contains properties of a Job.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.JobProperties.#ctor">
+            <summary>
+            Default constructor that creates an empty JobProperties object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.JobId">
+            <summary>
+            System generated.  Ignored at creation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.StartTimeUtc">
+            <summary>
+            System generated.  Ignored at creation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.EndTimeUtc">
+            <summary>
+            System generated.  Ignored at creation.
+            Represents the time the job stopped processing.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.Type">
+            <summary>
+            Required.
+            The type of job to execute.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.Status">
+            <summary>
+            System generated.  Ignored at creation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.Progress">
+            <summary>
+            System generated.  Ignored at creation.
+            Represents the percentage of completion.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.InputBlobContainerUri">
+            <summary>
+            URI containing SAS token to a blob container that contains registry data to sync.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.InputBlobName">
+            <summary>
+            The blob name to be used when importing from the provided input blob container.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.OutputBlobContainerUri">
+            <summary>
+            URI containing SAS token to a blob container.  This is used to output the status of the job and the results.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.OutputBlobName">
+            <summary>
+            The name of the blob that will be created in the provided output blob container.  This blob will contain
+            the exported device registry information for the IoT Hub.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.ExcludeKeysInExport">
+            <summary>
+            Optional for export jobs; ignored for other jobs.  Default: false.  If false, authorization keys are included
+            in export output.  Keys are exported as null otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.JobProperties.FailureReason">
+            <summary>
+            System genereated.  Ignored at creation.
+            If status == failure, this represents a string containing the reason.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.JobStatus">
+            <summary>
+            Specifies the various job status for a job.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.JobType">
+            <summary>
+            Used to delineate job actions.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Message">
+            <summary>
+            The data structure represent the message that is used for interacting with IotHub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.#ctor">
+            <summary>
+            Default constructor with no body data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.#ctor(System.IO.Stream)">
+            <summary>
+            Constructor which uses the argument stream as the body stream.
+            </summary>
+            <param name="stream">a stream which will be used as body stream.</param>
+            <remarks>User is expected to own the disposing of the stream when using this constructor.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.#ctor(System.Byte[])">
+            <summary>
+            Constructor which uses the input byte array as the body
+            </summary>
+            <param name="byteArray">a byte array which will be used to
+            form the body stream</param>
+            <remarks>user should treat the input byte array as immutable when
+            sending the message.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.#ctor(Microsoft.Azure.Amqp.AmqpMessage)">
+            <summary>
+            This constructor is only used in the receive path from Amqp path, 
+            or in Cloning from a Message that has serialized.
+            </summary>
+            <param name="amqpMessage"></param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.#ctor(System.IO.Stream,System.Boolean)">
+            <summary>
+            This constructor is only used on the Gateway http path so that 
+            we can clean up the stream.
+            </summary>
+            <param name="stream"></param>
+            <param name="ownStream"></param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.MessageId">
+            <summary>
+            [Required for two way requests] Used to correlate two-way communication. 
+            Format: A case-sensitive string ( up to 128 char long) of ASCII 7-bit alphanumeric chars 
+            + {'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. 
+            Non-alphanumeric characters are from URN RFC.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.To">
+            <summary>
+            [Required] Destination of the message
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.ExpiryTimeUtc">
+            <summary>
+            [Optional] The time when this message is considered expired
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.CorrelationId">
+            <summary>
+            Used in message responses and feedback
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.Ack">
+            <summary>
+            Indicates whether consumption or expiration of the message should post data to the feedback queue
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Microsoft.Azure.Devices.Message.SequenceNumber" -->
+        <member name="P:Microsoft.Azure.Devices.Message.LockToken">
+            <summary>
+            [Required] LockToken of the received message
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.EnqueuedTimeUtc">
+            <summary>
+            Time when the message was received by the server
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.UserId">
+            <summary>
+            [Required in feedback messages] Used to specify the origin of messages generated by device hub. 
+            Possible value: “{hub name}/”
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.Properties">
+            <summary>
+            Gets the dictionary of user properties which are set when user send the data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.SystemProperties">
+            <summary>
+            Gets the dictionary of system properties which are managed internally.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Message.DeliveryTag">
+            <summary>
+            Gets or sets the deliveryTag which is used for server side checkpointing.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.Clone">
+            <summary>
+            Makes a clone of the current event data instance.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.ObjectDisposedException">throws if the event data has already been disposed.</exception>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.Dispose">
+            <summary>
+            Dispose the current event data instance
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.GetBodyStream">
+            <summary>
+            Return the body stream of the current event data instance
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">throws if the method has been called.</exception>
+            <exception cref="T:System.ObjectDisposedException">throws if the event data has already been disposed.</exception>
+            <remarks>This method can only be called once and afterwards method will throw <see cref="T:System.InvalidOperationException"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Message.GetBytes">
+            <summary>
+            This methods return the body stream as a byte array
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">throws if the method has been called.</exception>
+            <exception cref="T:System.ObjectDisposedException">throws if the event data has already been disposed.</exception>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.MessageConverter.UpdateMessageHeaderAndProperties(Microsoft.Azure.Amqp.AmqpMessage,Microsoft.Azure.Devices.Message)">
+            <summary>
+            Copies the properties from the amqp message to the Message instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.MessageConverter.UpdateAmqpMessageHeadersAndProperties(Microsoft.Azure.Amqp.AmqpMessage,Microsoft.Azure.Devices.Message,System.Boolean)">
+            <summary>
+            Copies the Message instance's properties to the AmqpMessage instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.MessageSystemPropertyNames">
+            <summary>
+            The names of the system properties in the <see cref="T:Microsoft.Azure.Devices.Message"/> class.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.PutOperationType.CreateEntity">
+            <summary>
+            The PUT operation will create a new entity
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.PutOperationType.UpdateEntity">
+            <summary>
+            The PUT operation will update (replace) an existing entity as per ETag rules
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.PutOperationType.ForceUpdateEntity">
+            <summary>
+            The PUT operation will update (replace) an existing entity ignoring ETag rules
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Receiver`1">
+            <summary>
+            Contains methods that services can use to perform receive operations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Receiver`1.ReceiveAsync">
+            <summary>
+            Receive a message using the default timeout.
+            </summary>
+            <returns>The receive message or null if there was no message until the default timeout</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Receiver`1.ReceiveAsync(System.TimeSpan)">
+            <summary>
+            Receives a message
+            </summary>
+            <param name="timeout">The timeout for receiving a message</param>
+            <returns>The receive message or null if there was no message until the specified timeout</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Receiver`1.CompleteAsync(`0)">
+            <summary>
+            Deletes a received message from the queue
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Receiver`1.AbandonAsync(`0)">
+            <summary>
+            Puts a received message back into the queue
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.RegistryManager">
+            <summary>
+            Contains methods that services can use to perform create, remove, update and delete operations on devices.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.CreateFromConnectionString(System.String)">
+            <summary>
+            Creates an RegistryManager from the Iot Hub connection string.
+            </summary>
+            <param name="connectionString"> The Iot Hub connection string.</param>
+            <returns> An RegistryManager instance. </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.OpenAsync">
+            <summary>
+            Explicitly open the RegistryManager instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.CloseAsync">
+            <summary>
+            Closes the RegistryManager instance and disposes its resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.AddDeviceAsync(Microsoft.Azure.Devices.Device)">
+            <summary>
+            Register a new device with the system
+            </summary>
+            <param name="device">
+            The Device object to be registered.
+            </param>
+            <returns>echoes back the Device object with the generated keys and etags</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.AddDeviceAsync(Microsoft.Azure.Devices.Device,System.Threading.CancellationToken)">
+            <summary>
+            Register a new device with the system
+            </summary>
+            <param name="device">
+            The Device object to be registered.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>echoes back the Device object with the generated keys and etags</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.AddDevicesAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device})">
+            <summary>
+            Register a list of new devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be registered.
+            </param>
+            <returns>returns a string array of error messages</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.AddDevicesAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device},System.Threading.CancellationToken)">
+            <summary>
+            Register a list of new devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be registered.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>returns a string array of error messages</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.AddDevices2Async(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device})">
+            <summary>
+            Register a list of new devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be registered.
+            </param>
+            <returns>returns a BulkRegistryOperationResult object</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.AddDevices2Async(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device},System.Threading.CancellationToken)">
+            <summary>
+            Register a list of new devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be registered.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>returns a BulkRegistryOperationResult object</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDeviceAsync(Microsoft.Azure.Devices.Device)">
+            <summary>
+            Update the mutable fields of the device registration
+            </summary>
+            <param name="device">
+            The Device object with updated fields.
+            </param>
+            <returns>echoes back the Device object with updated etags</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDeviceAsync(Microsoft.Azure.Devices.Device,System.Boolean)">
+            <summary>
+            Update the mutable fields of the device registration
+            </summary>
+            <param name="device">
+            The Device object with updated fields.
+            </param>
+            <param name="forceUpdate">
+            Forces the device object to be replaced without regard for an ETag match.
+            </param>
+            <returns>echoes back the Device object with updated etags</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDeviceAsync(Microsoft.Azure.Devices.Device,System.Threading.CancellationToken)">
+            <summary>
+            Update the mutable fields of the device registration
+            </summary>
+            <param name="device">
+            The Device object with updated fields.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>echoes back the Device object with updated etags</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDeviceAsync(Microsoft.Azure.Devices.Device,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Update the mutable fields of the device registration
+            </summary>
+            <param name="device">
+            The Device object with updated fields.
+            </param>
+            <param name="forceUpdate">
+            Forces the device object to be replaced even if it was updated since it was retrieved last time.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>echoes back the Device object with updated etags</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDevicesAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device})">
+            <summary>
+            Update a list of devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be updated.
+            </param>
+            <returns>returns a string array of error messages</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDevicesAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Update a list of devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be updated.
+            </param>
+            <param name="forceUpdate">
+            Forces the device object to be replaced even if it was updated since it was retrieved last time.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>returns a string array of error messages</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDevices2Async(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device})">
+            <summary>
+            Update a list of devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be updated.
+            </param>
+            <returns>returns a BulkRegistryOperationResult object</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.UpdateDevices2Async(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Update a list of devices with the system
+            </summary>
+            <param name="devices">
+            The Device objects to be updated.
+            </param>
+            <param name="forceUpdate">
+            Forces the device object to be replaced even if it was updated since it was retrieved last time.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>returns a BulkRegistryOperationResult object</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDeviceAsync(System.String)">
+            <summary>
+            Deletes a previously registered device from the system.
+            </summary>
+            <param name="deviceId">
+            The id of the device to be deleted.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDeviceAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a previously registered device from the system.
+            </summary>
+            <param name="deviceId">
+            The id of the device to be deleted.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDeviceAsync(Microsoft.Azure.Devices.Device)">
+            <summary>
+            Deletes a previously registered device from the system.
+            </summary>
+            <param name="device">
+            The device to be deleted.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDeviceAsync(Microsoft.Azure.Devices.Device,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a previously registered device from the system.
+            </summary>
+            <param name="device">
+            The device to be deleted.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDevicesAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device})">
+            <summary>
+            Deletes a list of previously registered devices from the system.
+            </summary>
+            <param name="devices">
+            The devices being deleted.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDevicesAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a list of previously registered devices from the system.
+            </summary>
+            <param name="devices">
+            The devices being deleted.
+            </param>
+            <param name="forceRemove">
+            Forces the device object to be removed without regard for an ETag match.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDevices2Async(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device})">
+            <summary>
+            Deletes a list of previously registered devices from the system.
+            </summary>
+            <param name="devices">
+            The devices being deleted.
+            </param>
+            <returns>returns a BulkRegistryOperationResult object</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.RemoveDevices2Async(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Device},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a list of previously registered devices from the system.
+            </summary>
+            <param name="devices">
+            The devices being deleted.
+            </param>
+            <param name="forceRemove">
+            Forces the device object to be removed even if it was updated since it was retrieved last time.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>returns a BulkRegistryOperationResult object</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetRegistryStatisticsAsync">
+            <summary>
+            Gets usage statistics for the Iot Hub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetRegistryStatisticsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets usage statistics for the Iot Hub.
+            </summary>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetDeviceAsync(System.String)">
+            <summary>
+            Retrieves the specified Device object.
+            </summary>
+            <param name="deviceId">
+            The id of the device to be retrieved.
+            </param>
+            <returns>
+            The Device object.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetDeviceAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the specified Device object.
+            </summary>
+            <param name="deviceId">
+            The id of the device to be retrieved.
+            </param>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>
+            The Device object.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetDevicesAsync(System.Int32)">
+            <summary>
+            Retrieves specified number of devices from every Iot Hub partition. 
+            This is an approximation and not a definitive list. Results are not ordered.
+            </summary>
+            <returns>
+            The list of devices
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetDevicesAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves specified number of devices from every Iot hub partition. 
+            This is an approximation and not a definitive list. Results are not ordered.
+            </summary>
+            <returns>
+            The list of devices
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ExportRegistryAsync(System.String,System.String)">
+            <summary>
+            Copies registered device data to a set of blobs in a specific container in a storage account. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ExportRegistryAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Copies registered device data to a set of blobs in a specific container in a storage account. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ImportRegistryAsync(System.String,System.String)">
+            <summary>
+            Imports registered device data from a set of blobs in a specific container in a storage account. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ImportRegistryAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Imports registered device data from a set of blobs in a specific container in a storage account. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ExportDevicesAsync(System.String,System.Boolean)">
+            <summary>
+            Creates a new bulk job to export device registrations to the container specified by the provided URI.
+            </summary>
+            <param name="exportBlobContainerUri"></param>
+            <param name="excludeKeys"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ExportDevicesAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new bulk job to export device registrations to the container specified by the provided URI.
+            </summary>
+            <param name="exportBlobContainerUri"></param>
+            <param name="excludeKeys"></param>
+            <param name="cancellationToken"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ExportDevicesAsync(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a new bulk job to export device registrations to the container specified by the provided URI.
+            </summary>
+            <param name="exportBlobContainerUri"></param>
+            <param name="outputBlobName"></param>
+            <param name="excludeKeys"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ExportDevicesAsync(System.String,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new bulk job to export device registrations to the container specified by the provided URI.
+            </summary>
+            <param name="exportBlobContainerUri"></param>
+            <param name="outputBlobName"></param>
+            <param name="excludeKeys"></param>
+            <param name="cancellationToken"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ImportDevicesAsync(System.String,System.String)">
+            <summary>
+            Creates a new bulk job to import device registrations into the IoT Hub.
+            </summary>
+            <param name="importBlobContainerUri"></param>
+            <param name="outputBlobContainerUri"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ImportDevicesAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new bulk job to import device registrations into the IoT Hub.
+            </summary>
+            <param name="importBlobContainerUri"></param>
+            <param name="outputBlobContainerUri"></param>
+            <param name="cancellationToken"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ImportDevicesAsync(System.String,System.String,System.String)">
+            <summary>
+            Creates a new bulk job to import device registrations into the IoT Hub.
+            </summary>
+            <param name="importBlobContainerUri"></param>
+            <param name="outputBlobContainerUri"></param>
+            <param name="inputBlobName"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.ImportDevicesAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new bulk job to import device registrations into the IoT Hub.
+            </summary>
+            <param name="importBlobContainerUri"></param>
+            <param name="outputBlobContainerUri"></param>
+            <param name="inputBlobName"></param>
+            <param name="cancellationToken"></param>
+            <returns>JobProperties of the newly created job.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetJobAsync(System.String)">
+            <summary>
+            Gets the job with the specified ID.
+            </summary>
+            <param name="jobId"></param>
+            <returns>JobProperties of the job specified by the provided jobId.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetJobAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the job with the specified ID.
+            </summary>
+            <param name="jobId"></param>
+            <param name="cancellationToken"></param>
+            <returns>JobProperties of the job specified by the provided jobId.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetJobsAsync">
+            <summary>
+            List all jobs for the IoT Hub.
+            </summary>
+            <returns>IEnumerable of JobProperties of all jobs for this IoT Hub.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.GetJobsAsync(System.Threading.CancellationToken)">
+            <summary>
+            List all jobs for the IoT Hub.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns>IEnumerable of JobProperties of all jobs for this IoT Hub.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.CancelJobAsync(System.String)">
+            <summary>
+            Cancels/Deletes the job with the specified ID.
+            </summary>
+            <param name="jobId"></param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.RegistryManager.CancelJobAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Cancels/Deletes the job with the specified ID.
+            </summary>
+            <param name="jobId"></param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.RegistryStatistics">
+            <summary>
+            Contains device registry statistics that can be retrieved from IotHub.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ServiceAuthenticationWithSharedAccessPolicyKey">
+            <summary>
+            Authentication method that uses a shared access policy key. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceAuthenticationWithSharedAccessPolicyKey.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.ServiceAuthenticationWithSharedAccessPolicyKey"/> class.
+            </summary>
+            <param name="policyName">Name of the shared access policy to use.</param>
+            <param name="key">Key associated with the shared access policy.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ServiceAuthenticationWithSharedAccessPolicyToken">
+            <summary>
+            Authentication method that uses a shared access policy token. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceAuthenticationWithSharedAccessPolicyToken.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.ServiceAuthenticationWithSharedAccessPolicyToken"/> class.
+            </summary>
+            <param name="policyName">Name of the shared access policy to use.</param>
+            <param name="token">Token associated with the shared access policy.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.TransportType">
+            <summary>
+            Transport types supported by ServiceClient - Amqp and Amqp over WebSocket only
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.TransportType.Amqp">
+            <summary>
+            Advanced Message Queuing Protocol transport.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.TransportType.Amqp_WebSocket_Only">
+            <summary>
+            Advanced Message Queuing Protocol transport over WebSocket only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ServiceClient">
+            <summary>
+            Contains methods that services can use to send messages to devices
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.#ctor">
+            <summary>
+            Make this constructor internal so that only this library may implement this abstract class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.CreateFromConnectionString(System.String)">
+            <summary>
+            Create ServiceClient from the specified connection string
+            </summary>
+            <param name="connectionString">Connection string for the iothub</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.CreateFromConnectionString(System.String,Microsoft.Azure.Devices.TransportType)">
+            <summary>
+            Create ServiceClient from the specified connection string using specified Transport Type
+            </summary>
+            <param name="connectionString">Connection string for the iothub</param>
+            <param name="transportType">Specifies whether Amqp or Amqp over Websocket transport is used</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.OpenAsync">
+            <summary>
+            Open the ServiceClient instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.CloseAsync">
+            <summary>
+            Close the ServiceClient instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.SendAsync(System.String,Microsoft.Azure.Devices.Message)">
+            <summary>
+            Send a one-way notification to the specified device
+            </summary>
+            <param name="deviceId">The device identifier for the target device</param>
+            <param name="message">The message containing the notification</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.PurgeMessageQueueAsync(System.String)">
+            <summary>
+            Removes all messages from a device's queue.
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.PurgeMessageQueueAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Removes all messages from a device's queue.
+            </summary>
+            <param name="deviceId"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.GetFeedbackReceiver">
+            <summary>
+            Get the FeedbackReceiver
+            </summary>
+            <returns>An instance of the FeedbackReceiver</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.GetServiceStatisticsAsync">
+            <summary>
+            Gets service statistics for the Iot Hub.
+            </summary>
+            <returns>returns ServiceStatistics object containing current service statistics</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.ServiceClient.GetServiceStatisticsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets service statistics for the Iot Hub.
+            </summary>
+            <param name="cancellationToken">
+            The token which allows the the operation to be cancelled.
+            </param>
+            <returns>returns ServiceStatistics object containing current service statistics</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.ServiceStatistics">
+            <summary>
+            Contains service statistics that can be retrieved from IotHub.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.SymmetricKey">
+            <summary>
+            primary and secondary symmetric keys of a device.
+            </summary>
+        </member>
+    </members>
+</doc>

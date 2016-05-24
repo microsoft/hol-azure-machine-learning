@@ -1,0 +1,16 @@
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\DeviceCommands.exe.config
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\DeviceCommands.exe
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\DeviceCommands.pdb
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\Microsoft.Azure.Amqp.dll
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\Microsoft.Azure.Devices.dll
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\Newtonsoft.Json.dll
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\System.Net.Http.Formatting.dll
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\System.Web.Http.dll
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\Microsoft.Azure.Amqp.xml
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\Microsoft.Azure.Devices.xml
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\Newtonsoft.Json.xml
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\System.Net.Http.Formatting.xml
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\bin\Debug\System.Web.Http.xml
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\obj\Debug\DeviceCommands.csprojResolveAssemblyReference.cache
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\obj\Debug\DeviceCommands.exe
+C:\BuildTour2016Cloud\IoT-Session\src\DeviceCommands\DeviceCommands\obj\Debug\DeviceCommands.pdb

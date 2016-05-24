@@ -1,0 +1,15 @@
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\ManualFanOn.exe.config
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\ManualFanOn.exe
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\ManualFanOn.pdb
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\Microsoft.Azure.Amqp.dll
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\Microsoft.Azure.Devices.dll
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\Newtonsoft.Json.dll
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\System.Net.Http.Formatting.dll
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\System.Web.Http.dll
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\Microsoft.Azure.Amqp.xml
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\Microsoft.Azure.Devices.xml
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\Newtonsoft.Json.xml
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\System.Net.Http.Formatting.xml
+c:\buildTour\ManualFanOn\ManualFanOn\bin\Release\System.Web.Http.xml
+c:\buildTour\ManualFanOn\ManualFanOn\obj\Release\ManualFanOn.exe
+c:\buildTour\ManualFanOn\ManualFanOn\obj\Release\ManualFanOn.pdb

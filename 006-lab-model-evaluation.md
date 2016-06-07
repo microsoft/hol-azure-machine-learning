@@ -48,7 +48,14 @@ In the previous lab, we developed an experiment to train a model for making pred
 3. After creating a copy with “Save as” command, you can change the copied experiments name. Drag&drop a “Split Data” module on the new experiment. Connect the output port of “linoise.csv” module to the input port of “Split Data” module. Connect the first output port of the “Split Data” module to the second input port of “Train Model” module. Set the “Fraction of rows in the first output dataset” property to 0.6 (which means %60 of the input rows will be in first output port, %40 will be in the second output port).  
 ![](./imgs/6.2.i008.png)  
 
-4. Drag&drop a “Score Model” module from “Machine Learning” -> “Score” node path. Make the appropriate connections as shown on the below screen shot.  
+4. Select the “Train Model” module and switch to its properties window then click on the “Launch column selector” button.  
+![](./imgs/4.2.i006.png)  
+
+5. In the pop-up window, select the ywnoise column as the label column then press the checkmark button on the bottom right corner.  
+![](./imgs/4.2.i007.png)  
+For the simplicity, we have two columns, “x” and “ywnoise”, in our input dataset. There might be more columns as we will explore the case in the upcoming sessions. In this experiment, looking at the values in “x” column, we train our “Linear Regression” model with their labels/correspondence values on the “ywnoise” column. So the model will take any “x” value in the future and will predict the best possible “ywnoise” value. As summary, label column is the target column that we will predict its value.  
+
+6. Drag&drop a “Score Model” module from “Machine Learning” -> “Score” node path. Make the appropriate connections as shown on the below screen shot.  
 ![](./imgs/6.2.i009.png)  
 
 5. “RUN” the experiment, then click on the output port of the “Score Model” module’s output port and click “Visualize” to view the output.  

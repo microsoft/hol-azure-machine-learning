@@ -111,7 +111,7 @@ To generate synthetic data in R, we will use the R studio installed on the local
     # Write out the resulting data as a CSV file. Be carefull about the tab indentation which is important for Python.Write out the resulting data as a CSV file. Be carefull about the tab indentation which is important for Python.
     with open('linoise.csv', 'wb') as f:
         writer = csv.writer(f)
-        writer.writerow(['x','','ywnoise'])
+        writer.writerow(['x', 'ywnoise'])
         writer.writerows(izip(x, ywnoise))
     ```
 

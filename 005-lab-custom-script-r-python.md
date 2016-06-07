@@ -16,39 +16,34 @@ R script module is used to execute almost all of the R scripts that you can run 
 
 1. Create a blank Azure ML experiment.  
 
-2. From the module toolbox, drag&drop “Execute R Script” module which is under “R Language Modules” node.  
+1. From the module toolbox, drag&drop “Execute R Script” module which is under “R Language Modules” node.  
 ![](./imgs/5.2.i001.png) 
 
-3. “Execute R Script” Module has three input, two output ports as numerated below. First and second ports are used to stream two datasets as input, third port is used to stream a compressed script bundle as an input. This script bundle may contain dataset, third party R libs etc. Fourth port is the data output port and the fifth port is the R device output port, where you can output R plots etc.  
+1. “Execute R Script” Module has three input, two output ports as numerated below. First and second ports are used to stream two datasets as input, third port is used to stream a compressed script bundle as an input. This script bundle may contain dataset, third party R libs etc. Fourth port is the data output port and the fifth port is the R device output port, where you can output R plots etc.  
 ![](./imgs/5.2.i002.png) 
 
-4. Select the “Execute R Script” module and switch to the properties window. Under the “R Script” section you will see the template code which shows you the way to access the above mentioned 5 ports.  
+1. Select the “Execute R Script” module and switch to the properties window. Under the “R Script” section you will see the template code which shows you the way to access the above mentioned 5 ports.  
 ![](./imgs/5.2.i003.png) 
 
-5. In this section, we will not get any input value but produce just output. Select the existing text in “R Script” editor window and delete them all.  
+1. In this section, we will not get any input value but produce just output. Select the existing text in “R Script” editor window and delete them all.  
 
-6. Type the following lines of R Code into the “R Script” window which is almost the same as the one that we run locally in the previous lab.
+1. Type the following lines of R Code into the “R Script” window which is almost the same as the one that we run locally in the previous lab.
+```r
+# Generate synthetic data
+x <- seq(1, 30)
+y <- x
+noise <- runif(30, -1, 1)
+ywnoise <- y + noise * 2
+# plot point cloud on a chart
+plot(x, ywnoise, xlab = NA, ylab = NA)
+# combine two columns to create data grid
+linoise <- cbind(x, ywnoise)
+linoise <- as.data.frame(linoise)
+# Select data.frame to be sent to the output Dataset port
+maml.mapOutputPort("linoise");
+```
 
-    ```r
-    # Generate synthetic data
-    x <- seq(1, 30)
-    y <- x
-    noise <- runif(30, -1, 1)
-    ywnoise <- y + noise * 2
-
-    # plot point cloud on a chart
-    plot(x, ywnoise, xlab = NA, ylab = NA)
-
-    # combine two columns to create data grid
-    linoise <- cbind(x, ywnoise)
-
-    linoise <- as.data.frame(linoise)
-
-    # Select data.frame to be sent to the output Dataset port
-    maml.mapOutputPort("linoise");
-    ```  
-    
-7. “Run” this simple experiment which consist of a single “Execute R Script” module.  
+1. “Run” this simple experiment which consist of a single “Execute R Script” module.  
 
 8. After a successful execution, click on the first output port, then select the “visualize” menu item on the pop-up menu window. You will see the similar dataset that we generated in the previous lab.  
 ![](./imgs/5.2.i004.png) 
@@ -70,31 +65,29 @@ Similar to R, Python script module is used to execute most of the Python scripts
 ![](./imgs/5.2.i007.png) 
 
 5. Delete the template code and enter the following Python script into the textbox.
-
-    ```python
-    import matplotlib
-    matplotlib.use('agg')
-
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import pandas as pd
-
-    def azureml_main(dataframe1=None, dataframe2=None):
-        x = range(1, 31)
-        y = x
-        noise = np.random.uniform(-1, 1, 30)
-        ywnoise = y + noise * 2
+```python
+import matplotlib
+matplotlib.use('agg')
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+def azureml_main(dataframe1=None, dataframe2=None):
+    x = range(1, 31)
+    y = x
+    noise = np.random.uniform(-1, 1, 30)
+    ywnoise = y + noise * 2
         
-        d = {'x' : np.asarray(x), 'ywnoise' : ywnoise}
-        linoise = pd.DataFrame(d)
+    d = {'x' : np.asarray(x), 'ywnoise' : ywnoise}
+    linoise = pd.DataFrame(d)
 
-        fig = plt.figure()
-        ax = fig.gca()
-        linoise.plot(kind='line', ax=ax, x='x', y='ywnoise')
-        fig.savefig('linoise.png')
+    fig = plt.figure()
+    ax = fig.gca()
+    linoise.plot(kind='line', ax=ax, x='x', y='ywnoise')
+    fig.savefig('linoise.png')
 
-        return linoise
-    ```
+    return linoise
+```
+
 6. After a successful “RUN” of the above code in the “Execute Python Script” module, click on the second output port and visualize the output.  
 ![](./imgs/5.2.i008.png) 
 
@@ -113,16 +106,13 @@ There exist different versions of R and Python environments. Some 3rd party libr
 ![](./imgs/5.2.i010.png)  
 
 6. Enter the following R script into the editor of the “Execute R Script” module.
-
-    ```r
-    v <- version 
-
-    property <- as.character(names(v)) 
-    value <- as.character(v) 
-    data.set <- as.data.frame(cbind(property, value))
-    
-    maml.mapOutputPort("data.set");
-    ```  
+```r
+v <- version 
+property <- as.character(names(v)) 
+value <- as.character(v) 
+data.set <- as.data.frame(cbind(property, value))
+maml.mapOutputPort("data.set");
+```  
 
 7. “RUN” the experiment and visualize the first output port of the “Execute R Script” module.  
 ![](./imgs/5.2.i011.png)  
@@ -131,10 +121,11 @@ Output value is same to the one that we get from the local R environment. Which 
 8. Similar to version information, it is possible to get the list of installed R packages in Azure ML Studio. R packages are used to access and integrate various functionalities, libraries into your R script. Create a new blank Azure ML experiment.  
 
 9. Drag&drop a new “Execute R Script” module. First delete the existing script then enter the following R script through the R script editor in its properties window.  
-    ```r
-    data.set <- data.frame(installed.packages()) 
-    maml.mapOutputPort("data.set")
-    ```
+```r
+data.set <- data.frame(installed.packages()) 
+maml.mapOutputPort("data.set")
+```
+
 10. “RUN” the experiment, click on the first output port and visualize the output.  
 ![](./imgs/5.2.i012.png)  
 It is possible to download this data through “Convert to CSV” like module.  
@@ -150,16 +141,16 @@ It is possible to download this data through “Convert to CSV” like module.
 14. You can open the downloaded file in Excel like spreadsheet program.  
 
 15. Similar to R environment, it is possible to get the version information of the Python environment. As in the “Execute R Script” module, drag&drop “Execute Python Script” module into a new blank Azure ML experiment and enter the following Python script into its editor.  
-    ```r
-    import pandas as pd
-    import sys
-    def azureml_main(dataframe1 = None, dataframe2 = None):
-        prop = ['major', 'minor', 'micro', 'releaselevel', 'serial']
-        val = sys.version_info[:]
-        d = {"prop" : prop, "val" : [str(v) for v in val]}
-        df = pd.DataFrame(d)
-        return df,
-    ```  
+```r
+import pandas as pd
+import sys
+def azureml_main(dataframe1 = None, dataframe2 = None):
+    prop = ['major', 'minor', 'micro', 'releaselevel', 'serial']
+    val = sys.version_info[:]
+    d = {"prop" : prop, "val" : [str(v) for v in val]}
+    df = pd.DataFrame(d)
+    return df,
+```  
 
 16. “RUN” the experiment and visualize the output through the first output port. Version of the Azure ML python environment is _2.7.7_  
 ![](./imgs/5.2.i015.png)  

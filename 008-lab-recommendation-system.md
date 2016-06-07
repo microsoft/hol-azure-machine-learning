@@ -28,7 +28,7 @@ To be able to make some analysis at first sight, using Microsoft Excel we will g
  
 | restaurantId | type |
 | --- | --- |
-| r1	m
+| r1 |	m |
 | ... | ... |
 | r5 | v |
 | r6 | mv |

@@ -15,6 +15,7 @@ This content is designed for audience without any prior Machine learning knowled
 | 60         | Lab6 - [Evaluate model performance in AML](./006-lab-model-evaluation.md) |
 | 60         | Lab7 - [Azure ML Batch Score, Retrain, Production and Automatization](./007-lab-production-ops.md) |
 | 45         | Lab8 - [Recommendation System](./008-lab-recommendation-system.md) |
+| 45         | Lab9 - [Monetizing Azure ML Solution](./009-lab-monetization.md) |
 
 ### **Detailed contents of the HOL**
 
@@ -114,3 +115,12 @@ This content is designed for audience without any prior Machine learning knowled
     * Find related users
     * Find related items
     * What to recommend for a brand new user?
+9. [Monetizing Azure ML Solution](./009-lab-monetization.md)
+    * Overview
+        * Objectives
+        * Requirements
+    * Azure ML Web Service Details
+    * Create Azure Management API Service
+    * CORS issue with Azure Machine Learnin Web Services
+    * Restrict or Rate limit your Web Service
+    * Test and Publish your Web Service

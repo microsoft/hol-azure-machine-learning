@@ -11,7 +11,7 @@ This lab aims to demonstrate how to monetize Azure ML solution with Azure Manage
 ### 9.1.2. Requirements
 1. Knowledge of AzureML web service deployment ([Lab 4.2.2.](./004-lab-azureml-experiment.md)).
 
-## 9.2. Web Service Details
+## 9.2. Azure ML Web Service Details
 Before going into the details of integrating Azure Management API, lets have your Azure ML web service operational and have access details ready. Because everything will built on top of an Azure ML Web service. In this lab we will use the Azure ML solution with web service that we created on [Lab 4.2.2.](./004-lab-azureml-experiment.md). If you havent completed it yet, please do so or have another Azure ML web service ready.  
 ![](./imgs/9.2.i001.jpg)  
 1. Publishing the above AzureML solution will open the WebService dashboard. If you already published it before, just goto the Web services tab and open its dashboard. Here we will note three important information to be used in Azure Management Portal
@@ -144,7 +144,7 @@ In the **Policy statements** list, scroll down to find the **Set HTTP header** p
 1. Finally click the **Save** button to save all these changes and finalize our API settings.  
 ![](./imgs/9.2.i020.jpg)  
 
-## 9.3. CORS issue with Azure Machine Learnin Web Services
+## 9.4. CORS issue with Azure Machine Learnin Web Services
 If you want to access your Azure ML web service from a different domain, by default Azure ML doesnt allow this because of security reasons. This is known as CORS issue and demonstrated with the below diagram.  
 ![](./imgs/9.2.i021.jpg)  
 If you want to access an Azure ML web service from a different web site trhought Javascript etc. you need a proxy solution where Azure Management APIs is also one of the solution to this problem. If you need more details about the CORS, you may refer the following [video](https://channel9.msdn.com/Blogs/AzureApiMgmt/CORS-and-API-Management)  
@@ -168,11 +168,11 @@ Going back to our lab, follow the instructions below to enable the CORS support 
 ```
 This will allow any method, any IP address to acces from cross origin. Above settings doesnt have any restriction and generally you have to make modification on it to have secure web apps. Refer to the [following address](https://azure.microsoft.com/en-us/documentation/articles/api-management-policy-reference) to read more details on policy settings.
 
-## 9.4. Restrict or Rate limit your Web Service  
+## 9.5. Restrict or Rate limit your Web Service  
 If you want to go a bit forward add some rate limit functionality etc. you may refer to the tutorial at the following address
 https://azure.microsoft.com/en-us/documentation/articles/api-management-howto-product-with-rules/. It is as simple as modifying the policy configuration file that we did in section **9.3.*
 
-## 9.5. Test and Publish your Web Service
+## 9.6. Test and Publish your Web Service
 Before we can use the API, we need to put the API (plus other related APIs if we have) in to a product package and give access rights to our users through this product.
 
 1. Open the **Products** page and click on the **Add Product** link.  

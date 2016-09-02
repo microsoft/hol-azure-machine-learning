@@ -16,6 +16,7 @@ This content is designed for audience without any prior Machine learning knowled
 | 60         | Lab7 - [Azure ML Batch Score, Retrain, Production and Automatization](./007-lab-production-ops.md) |
 | 45         | Lab8 - [Recommendation System](./008-lab-recommendation-system.md) |
 | 45         | Lab9 - [Monetizing Azure ML Solution](./009-lab-monetization.md) |
+| 90         | Lab10 - [Case Study: Optical character recognition](./010-lab-cs-ocr.md) |
 
 ### **Detailed contents of the HOL**
 

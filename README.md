@@ -124,3 +124,22 @@ This content is designed for audience without any prior Machine learning knowled
     * CORS issue with Azure Machine Learnin Web Services
     * Restrict or Rate limit your Web Service
     * Test and Publish your Web Service
+
+10. [Case Study: Optical character recognition](./010-lab-cs-ocr.md)
+    * Overview
+        * Objectives
+        * Requirements
+    * Exploring and Understanding the Dataset
+        * Process MINST database in Azure ML with Python script
+        * Generate image tiles
+    * Azure ML solution for OCR
+        * Develope Azure ML experiment
+        * Deploy as webservice
+        * Parameters needed to publish with management API
+    * Consuming the ML solution
+        * Security of the API
+    * Develop web application
+        * Publish as Azure Web Application
+    * Test the solution
+    * Refine Features, Feature Engineering
+

@@ -3,7 +3,7 @@
 ## 10.1. Overview
 In this lab, we will develop an end to end solution with cloud backend. This lab is suitable for half day training depending on the level of users' ML knowledge. Based on an OpenSource dataset, we will develope a digit recognition Azure ML solution, publish it as web service, connect with Azure Management API to manage the usage rate, overcome CORS and security issues, and integrate into a simple Azure Web application to draw our own characters on a web page canvas and retrieve the ML prediction about the character. In this lab we will use the [MINST](https://en.wikipedia.org/wiki/MNIST_database), publicly available large database of handwritten digits, to develop our ML model.
 
-We will also give an overview about feature engineering based on this case study.
+We will also give an overview about feature engineering based on this case study. You can find source codes under **appx/odr** folder of this repository.
 
 ### 10.1.1. Objectives
 This lab aims to demonstrate how to develop a simple end to end solution that uses Azure ML solution. Having different type of datasets, we will focus on image understanding and explore the possible feature extraction process.
@@ -596,4 +596,130 @@ In this step we will develop a web application (static webpage with javascript) 
 There might be some error on the prediction. ML model may not recognize every of your drawing... You can try different classifier models and parameters in your ML model to improve the result. But more over sending 784 features to recognize a digit is not efficient. We need to make feature engineering, find more meaningful and less features i.e. 5-10 features instead of 784 with more reliable prediction results!
 
 ## 10.6. Refine features
-To be added soon...
+In the above example we used 784 features to define a label. In our web service, we also send 784 boolean (for black-white image) values to the ML service. In production stage and for real scenarios this amount of data traffic for such case and the number of features used are not feasible.
+
+For data traffic, instead of sending 784 boolean values, we can encode it at least into 784 / 8 = 98 byte data in bitwise manner, or compress it and decompress at the server-side etc.
+
+For feature, using high amount of features doesnt mean or guarantee the realiability of the model. Working over data, we can reduce the features into smaller and meaningful set. Below we will show how to extract features.   
+
+### Extracting features for object recognition
+For the sake of simplicity, we will reduce our digit label set from 10 to 2 and we will create a set of features to detect only two digits: 1s and 0s.
+
+Article by *Frey and Slate[1]* mentions how to detect different letters (Optical Character Recognition) with only 16 features. You may refer to the mentioned paper for more details and theory about this operation. Based on the techniques mentioned in this paper, we will use just the 4 of these features to detect if a digit is either 1 or 0. These features are: 
+
+- The width, in pixels, of the bounding box. 
+- The total number of "on" pixels in the digit image. 
+- The mean number of edges (an "on" pixel immediately above either an "off" pixel or the image boundary) encountered when making systematic scans of the image from bottom to top over all horizontal positions within the box.
+- The sum of horizontal positions of edges encountered as measured in the above. 
+
+Below are the visual interpretation of the above first three items.
+
+![](./imgs/10.2.d0f3.jpg)
+![](./imgs/10.2.d1f3.jpg)  
+Generally the width of the bounding box around digit 0 is almost two times larger than the one around digit 1.
+
+![](./imgs/10.2.d0f5.jpg)
+![](./imgs/10.2.d1f5.jpg)  
+If you divide the onpixels of digit 0 into two pieces as left and right side, number of on pixels in each side is almost equal to the on pixel count in digit 1. 
+
+![](./imgs/10.2.d0f15.jpg)
+![](./imgs/10.2.d1f15.jpg)  
+Number of "on" pixel immediately above either an "off" pixel or the image boundary of digit 0 is almost two times more than the ones in digit 1.
+
+These are some of the features that we can use for detecting if it is digit 1 or 0 image.
+
+Based on the above features, we develop the following new ML experiment in Azure ML Studio to test the results.
+![](./imgs/10.2.i039.jpg)  
+
+Same dataset is used but to filter our just the digits 0s and 1s, we used "Apply SQL Transformation" module with the following SQL script in its script properties:
+```SQL
+select * from t1 where Label = 0 or label = 1
+```
+In addition, we process the resulting data with the following python script to generate the above mentioned 4 features along with the label. By this way, we reduce the number of columns in the input dataset from 785 to 5! A big decrease, less network traffic, shorter computation time etc.
+```python
+import pandas as pd
+import numpy as np
+import math
+from PIL import Image
+
+def bbox(img):
+    rows = np.any(img, axis=1)
+    cols = np.any(img, axis=0)
+    rmin, rmax = np.where(rows)[0][[0, -1]]
+    cmin, cmax = np.where(cols)[0][[0, -1]]
+
+    return rmin, rmax, cmin, cmax
+
+def azureml_main(df1 = None, df2 = None):
+    IMG_W = 28      # Image width in pixels
+    IMG_H = 28      # Image height in pixels
+    IMG_C = 12665   # Image count (number of rows in the MINST60K DB with label = 0 or 1. For MINST10K DB it should be 2115)
+    IMG_F = 5       # Number of columns w label and features to generate
+    
+    npa = df1.as_matrix()
+    
+    # Create empty features list
+    res = np.array([]).reshape(0, IMG_F)            
+                
+    for didx in range(0, IMG_C):
+        # Read raw digit data from column f0
+        dgtpx = npa[didx, 1:] 
+    
+        # Convert to 2D pixel matrix representation
+        dgtpx = np.reshape(dgtpx, (IMG_H, IMG_W))
+        
+        # Convert to binary (no gray scale)
+        dgtpx[np.where(dgtpx != 0)] = 1
+    
+        # initialize processed digit variable
+        curdgt = np.zeros((1, IMG_F))
+        
+        #0 Label of the current digit
+        curdgt[0, 0] = npa[didx, 0]
+    
+        # bounding box of the digit 
+        bb = bbox(dgtpx)
+            
+        # [1st feature] Width of the bounding boxes
+        curdgt[0, 1] = (bb[3] - bb[2] + 1)
+     
+        # [2nd feature] Total number of "on" pixels
+        curdgt[0, 2] = np.sum(np.sum(dgtpx, axis = 0), axis = 0) 
+    
+        # [3rd feature] The mean number of edges horizontal scan
+        # Count on internal pixels
+        ecnt = 0
+        for r in range(IMG_H - 2, -1, -1):
+            onpx = np.where(dgtpx[r, :] > 0)
+            for c in onpx[0]:
+                if dgtpx[r + 1, c] == 0:
+                    ecnt += 1
+        # Count bottom border
+        ecnt += np.sum(np.where(dgtpx[IMG_H-1, :] > 0))
+        curdgt[0, 3] = ecnt
+    
+        # [4th feature] The sum of the vertical positions of edges
+        # Count on internal pixels
+        hpcnt = 0
+        for r in range(IMG_H - 2, -1, -1):
+            onpx = np.where(dgtpx[r, :] > 0)
+            for c in onpx[0]:
+                if dgtpx[r + 1, c] == 0:
+                    hpcnt += (r+1)
+        curdgt[0, 4] = hpcnt
+        
+        # add processed digit data to dataset
+        res = np.concatenate((res, curdgt))
+    
+    result = pd.DataFrame(res)
+    return result,
+```
+
+If you check the confusion matrix of the above experiment, you will see that using 4 features instead of 784 will result in similar performance even better.  
+![](./imgs/10.2.i040.jpg)  
+
+For different type of object recognition, image processing etc. should we generate such features? It depends, this is where we need to jump to a new section on Deep Learning. A branch of machine learning where you can generate features from images automatically, without any interpretation!
+
+[1] P. W. Frey and D. J. Slate (Machine Learning Vol 6/2 March 91): "Letter Recognition Using Holland-style Adaptive Classifiers"
+
+

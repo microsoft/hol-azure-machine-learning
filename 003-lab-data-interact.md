@@ -166,4 +166,4 @@ Finally, we will explore the steps to access data retrieved using an HTTP web re
 
 2. Set “Reader/Import Data” module’s properties. You just need the endpoint URL to be requested and the format in which data results would be retrieved. Use the checkboxes below to select whether your data has headers or not and the possibility to use cached results if the data retrieved won't be changing too much, so the request hasn't need to be done each time you run your experiment.
 
-    ![](./imgs/3.3.i025.png)  
+    ![](./imgs/3.3.i026.png)  

@@ -55,6 +55,7 @@ This content is designed for audience without any prior Machine learning knowled
         * Manually enter data
         * Access data on Azure Storage
         * Access data on Azure SQL Database
+        * Get data from an HTTP web request
 
 4. [Develop and Consume AzureML Models](./004-lab-azureml-experiment.md)
     * Overview

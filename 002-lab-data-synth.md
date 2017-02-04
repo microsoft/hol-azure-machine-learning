@@ -22,7 +22,7 @@ Providing input values from 1 to 30 to the function we will get same output valu
  
 Using this function, it is very easy to find the corresponding y value. What if we don’t know anything about the function that produced these 30 pairs? What if the plotted line is not straight but noisy, curved etc.? In this lab first we will generate this simple synthetic dataset with some noise and in the future lab sessions we will look for more complex AML solutions.
  
-### 2.2.1 Microsoft Excel
+### 2.2.1 [OPTION A]  Microsoft Excel
 1. Open Microsoft Excel with a blank workbook.
  
 2. Type x, y, noise, x, “,” and ywnoise respectively in the first row of the first six columns.    
@@ -44,7 +44,7 @@ Using this function, it is very easy to find the corresponding y value. What if 
 Plotting column “x” and “ywnoise” will result similar to the following output:  
 ![](./imgs/2.2.i007.png)  
   
-### 2.2.2. R
+### 2.2.2. [OPTION B] R Language
 To generate synthetic data in R, we will use the R studio installed on the local machine. As in the Excel, uniform distribution method will be used to generate random data.
 
 1. Open RStudio program that we installed on the local machine in the previous lab session.  
@@ -81,7 +81,7 @@ To generate synthetic data in R, we will use the R studio installed on the local
     You can browse the content of generated CSV file by following the steps shown in the below screenshot.  
     ![](./imgs/2.2.i010.png)  
 
-### 2.2.3. Python
+### 2.2.3. [OPTION C] Python Language
 1. Open Spyder IDE (installed with Anaconda Python) on the local machine (Installation steps described in the previous lab).  
 ![](./imgs/2.2.i011.png)  
 
@@ -118,7 +118,7 @@ To generate synthetic data in R, we will use the R studio installed on the local
 3. In the editor window press F5 or from menu follow Run->Run to run the script. Which will generate a file named linoise.csv in the working directory and a plot of the variables.  
 ![](./imgs/2.2.i012.png)  
 
-### 2.2.4. Microsoft Azure SQL Server
+### 2.2.4. [OPTION D] Microsoft Azure SQL Server
 1. [Create a Microsoft Azure SQL Database](https://azure.microsoft.com/en-us/documentation/articles/sql-database-get-started) and make appropriate firewall settings to be able to connect from local pc and Azure.
 
 2. You can use any SQL Server management tool (i.e. [Microsoft SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx), Visual Studio etc.) to connect to your Azure SQL Server. [Here are the details](https://azure.microsoft.com/en-us/documentation/articles/sql-database-connect-query-ssms/) about how to connect Azure SQL Database. Note the SQL DB name, connection parameters like username password etc.  
@@ -148,7 +148,7 @@ To generate synthetic data in R, we will use the R studio installed on the local
     SELECT x, x + (RAND(convert(varbinary, newid())) * 2) - 1 as ywnoise FROM Seq
     ```
 
-### 2.2.5 Microsoft Azure Blob Storage
+### 2.2.5 [OPTION E] Microsoft Azure Blob Storage
 1. [Create an Azure storage account](https://azure.microsoft.com/en-us/documentation/articles/storage-create-storage-account/#create-a-storage-account) and note the account name and the access key. You can get the account name and key (password) anytime from the azure management portal from the Settings blade of the storage account service properties. These information is mandatory to access the storage service.  
 ![](./imgs/2.2.i014.png)  
 

@@ -20,11 +20,8 @@ You must have the following to complete this lab:
 ## 1.2. Create free tier Azure ML account
 Free Azure ML account is enough to create most of the experiments throughout the labs. Following instructions will work on major web browsers on Windows, Mac and Linux environments.
 
-1. Browse to https://studio.azureml.net  
-![](./imgs/1.2.i001.png)
- 
-2. Click on the “Sign In” link  
-![](./imgs/1.2.i002.png)
+1. Browse to https://studio.azureml.net and click on the “Sign In” link  
+![](./imgs/1.2.i002v2.png)
 
 3. Enter your Microsoft account to create a free Azure ML workspace.  
 ![](./imgs/1.2.i003.png)
@@ -57,14 +54,14 @@ Standard tier Azure ML account is another option with more flexibility. One of t
 ![](./imgs/1.3.i007.png)
 
 8. Now you are landed on the azure management portal page, where you can see the list of services available for you. Scroll down, select “Machine Learning” and click “Create an ML Workspace” links in order  
-![](./imgs/1.3.i008.png)
+![](./imgs/1.3.i008v2.png)
 
 9. In the new window, enter a unique name to your Azure ML workspace and to your storage account. Click on the “Create an ML workspace” link.  
-![](./imgs/1.3.i009.png)
+![](./imgs/1.3.i009v2.png)
 
 10. Once your workspace created and the status became “Online”, you can click on the “Open In Studio”. This will open the page where we will develop our Azure ML experiments in the next labs.  
 
-## 1.4. Install R and R Studio
+## 1.4. [OPTIONAL] Install R and R Studio
 This installation is completely optional. In a basic Azure ML solution development, you will not need local R tools or the Python tools. All features you will need are included in Azure ML Studio. With these installations we will be doing some of the experiments locally for comparison reasons and also to show widely used tools in the community.  
 
 R is a language and environment for statistical computing and graphics with an active and large user community. Hundreds of free, open source R libraries available for use. In addition, there exists various open source free IDEs one of which is R Studio. Azure ML supports running custom R scripts and in some parts of the labs, we will be using R Studio to test the code locally.  
@@ -83,7 +80,7 @@ Once the installation complete, you can launch the R Studio and start coding in 
 
 ![](./imgs/1.4.i001.png)
 
-## 1.5. Install Anaconda Python
+## 1.5. [OPTIONAL] Install Anaconda Python
 This installation is completely optional. In a regular Azure ML solution development, you will not need local R tools or the Python tools. All features you will need are included in Azure ML Studio. With these installations we will be doing some of the experiments locally for comparison reasons and also to show widely used tools in the community.  
 
 Anaconda is a completely free and open source Python distribution including the Python 2.7 and 3.5 bases.  

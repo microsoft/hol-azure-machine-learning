@@ -84,8 +84,8 @@ Once the installation complete, you can launch the R Studio and start coding in 
 This installation is completely optional. In a regular Azure ML solution development, you will not need local R tools or the Python tools. All features you will need are included in Azure ML Studio. With these installations we will be doing some of the experiments locally for comparison reasons and also to show widely used tools in the community.  
 
 Anaconda is a completely free and open source Python distribution including the Python 2.7 and 3.5 bases.  
-1. Browse to https://www.continuum.io/downloads
-2. Install Anaconda Python 2.7 by selecting the appropriate OS environment.
+1. Browse to https://www.anaconda.com/distribution/
+2. Install Anaconda Python 2.7 or 3.7 by selecting the appropriate OS environment.
 
 Once the installation completed you can start developing Python code through Spyder or command prompt.  
 ![](./imgs/1.5.i001.png)

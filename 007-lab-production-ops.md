@@ -260,7 +260,7 @@ You will see the two webservices that we created in the Azure ML Studio. You can
 1. Click on the Batch Execution link and **note** the BatchExecution URI together with the above API key as **second triplet**. Also copy the C# code at the end of this page as part of the **second triplet** that we will refer later.  
 ![](./imgs/7.2.i036.png)  
 
-1. Go back, now click on the "Update Resouce" link and note the Update URI together with the above API key as **third triplet**. Also copy the C# code at the end of this page as part of the **third triplet** that we will refer later.
+1. Go back, now click on the "Update Resource" link and note the Update URI together with the above API key as **third triplet**. Also copy the C# code at the end of this page as part of the **third triplet** that we will refer later.
 ![](./imgs/7.2.i035.png)  
 
 1. Now we have three set of triplets (URI, APIKey and C# code). We will create three different C# console applications and will use each triplet per console application. We will name the three console application as: 1) TrainedModelGenerator, 2) Updater and 3) BatchScoreTest. In addition to these three set of triplets, we need the account name, account key and a container name of the Azure storage account. (refer to the previous labs for how to get these storage parameters)
